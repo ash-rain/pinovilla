@@ -105,7 +105,7 @@ function process_html_dom($html, $page_title) {
     $root = $dom2->documentElement; // This will be html/body wrapper added by loadHTML
 
     // 2. Remove Elements based on page
-    if ($page_title === 'Rooms') {
+    if ($page_title === 'Halls') {
         // Remove prices
         $prices = $xpath2->query('.//*[@class="pricing-amount"]');
         foreach ($prices as $price) {
