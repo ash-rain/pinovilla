@@ -1,0 +1,122 @@
+/* ====== COOKIE BANNER STYLES ====== */
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    transform: none;
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--theme-color-light);
+    color: #000;
+    border-radius: 0px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    padding: 32px 32px 32px 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: sans-serif;
+}
+
+#cookie-banner h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: var(--semiBold);
+    color: var(--white);
+}
+
+#cookie-banner p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+    display: inline;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.cookie-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 0px;
+    width: 160px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-color1);
+    border: solid 1px var();
+    color: var(--theme-color-light);
+    transition: 0.5s;
+}
+
+.cookie-btn:is(:hover, :focus-visible, :focus-within) {
+    scale: 1.05;
+    background-color: var(--grey-05);
+    border: solid 1px var(--accent-01);
+    color: var(--white);
+}
+
+.cookie-btn.accept {
+    background-color: var(--theme-color1);
+    color: var(--theme-color-light);
+}
+
+.cookie-btn.accept:is(:hover, :focus-visible, :focus-within) {
+    scale: 1.05;
+    background-color: var(--theme-color1);
+    border: solid 1px var(--theme-color1);
+    color: var(--theme-color-light);
+}
+
+.cookie-btn.reject {
+    background-color: transparent;
+    border: solid 1px var(--theme-color1);
+    color: var(--theme-color1);
+}
+
+/* ====== COOKIE ICON STYLES ====== */
+#cookie-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--theme-color2);
+    border: 2px solid var(--theme-color1);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#cookie-icon img {
+    width: 32px;
+    height: 32px;
+    filter:
+            invert(46%)   /* make white → black so we can work from black   */
+            sepia(39%)    /* add warm brown base                            */
+            saturate(654%)
+            hue-rotate(357deg)
+            brightness(91%)
+            contrast(89%);
+}
+
+.cookie-icon { filter: ; }
+
+.policy-link{
+    color: var(--accent-01);
+    text-decoration: underline;
+    display: inline;
+}

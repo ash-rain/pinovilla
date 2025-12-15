@@ -1,0 +1,136 @@
+ID: 12 | Title: Contact
+<section class="page-title" style="background-image:url(./wp-content/themes/pinovilla/assets/Website/images/PINO/images/contact-us-header.jpg)">
+    <div class="auto-container">
+        <div class="title-outer text-center">
+            <h1 class="title" data-i18n="contact.pageTitle">Контакти</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/Index" data-i18n="breadcrumb.home">Начало</a></li>
+                <li data-i18n="breadcrumb.contact">Контакти</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- /PAGE-TITLE -->
+
+<!-- &#9617;&#9617;&#9617; CONTACT DETAILS &#9617;&#9617;&#9617; -->
+<section class="contact-details">
+    <div class="container pt-110 pb-70">
+        <div class="row">
+            <!-- &mdash;&mdash; FORM &mdash;&mdash; -->
+            <div class="col-xl-7 col-lg-6">
+                <div class="sec-title">
+                    <span class="sub-title before-none" data-i18n="contact.writeUs">Пишете ни</span>
+                    <h2 data-i18n="contact.yourMessage">Вашето съобщение</h2>
+                </div>
+
+                
+                    
+
+                    <!-- Honeypot fields (kept commented) -->
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                
+                                <span class="text-danger field-validation-valid" data-valmsg-for="FormName" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                
+                                <span class="text-danger field-validation-valid" data-valmsg-for="FormEmail" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                
+                                <span class="text-danger field-validation-valid" data-valmsg-for="FormSubject" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                
+                                <span class="text-danger field-validation-valid" data-valmsg-for="FormPhone" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="7" data-i18n-placeholder="placeholder.message" data-val="true" data-val-required="Моля, въведете съобщение. / Please enter a message. / Vă rugăm să introduceți un mesaj." id="FormMessage" name="FormMessage">
+</textarea>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="FormMessage" data-valmsg-replace="true"></span>
+                    </div>
+
+                    <!-- reCAPTCHA -->
+                    <div class="mb-4">
+                        <div class="g-recaptcha" data-sitekey="6LeZMxQrAAAAAEGRdRcgjZrEzdxzUU36HHn2Fs8B"></div>
+                    </div>
+
+                    <div class="mb-5">
+                        <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..." data-i18n="button.send">
+                            <span class="btn-title" data-i18n="button.send">Изпрати</span>
+                        </button>
+                        <button type="reset" class="theme-btn btn-style-one bg-theme-color5" data-i18n="button.clear">
+                            <span class="btn-title" data-i18n="button.clear">Изчисти</span>
+                        </button>
+                    </div>
+                
+
+            </div>
+            <!-- &mdash;&mdash; /FORM &mdash;&mdash; -->
+
+            <!-- &mdash;&mdash; INFO BOX &mdash;&mdash; -->
+            <div class="col-xl-5 col-lg-6">
+                <div class="contact-details__right">
+                    <div class="sec-title">
+                        <span class="sub-title before-none" data-i18n="contact.needHelp">Нужда от помощ?</span>
+                        <h2 data-i18n="contact.getInTouch">Свържете се с нас</h2>
+                        <div class="text" data-i18n="contact.alwaysHere">
+                            Винаги сме на линия за вас, когато имате въпроси.
+                        </div>
+                    </div>
+
+                    <ul class="list-unstyled contact-details__info">
+                        <li>
+                            <div class="icon"><span class="lnr-icon-phone-plus"></span></div>
+                            <div class="text">
+                                <h6 class="mb-1" data-i18n="contact.questions">Въпроси?</h6>
+                                <a href="tel:+359885185008">+359 88 51 85 008</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><span class="lnr-icon-envelope1"></span></div>
+                            <div class="text">
+                                <h6 class="mb-1" data-i18n="contact.emailUs">Напишете имейл</h6>
+                                <a href="mailto:info@pinovilla.com">info@pinovilla.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><span class="lnr-icon-location"></span></div>
+                            <div class="text">
+                                <h6 class="mb-1" data-i18n="contact.visitUs">Посетете ни</h6>
+                                <a target="_blank" href="https://www.google.com/maps/place/...">
+                                    к.к. Албена 9630, България
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- &mdash;&mdash; /INFO BOX &mdash;&mdash; -->
+        </div>
+    </div>
+</section>
+<!-- /CONTACT DETAILS -->
+
+<!-- &#9617;&#9617;&#9617; MAP &#9617;&#9617;&#9617; -->
+<section class="map-section">
+    
+    
+</section>
+<!-- /MAP -->
+
+    

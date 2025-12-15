@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.reservation-form {
+    width: 100%;
+    /*height: 880px;*/ /* Removed fixed height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation-form-left {
+    flex: 1;
+    padding: 64px 88px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.reservation-form-right {
+    width: 556px !important; /* If you must keep a fixed width, do so */
+    height: 880px;           /* This could also be changed to 'auto' if needed */
+    padding: 56px 78px 0px 78px;
+    background: #F7F6F0;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.reservation-form-secondary-title {
+    color: #A97B56;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.reservation-form-title {
+    color: #13110E;
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 16px;
+}
+
+.reserve-form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    /*width: 624px;*/
+    /*margin-top: 32px;*/
+}
+
+.reservation-input {
+    width: 300px;
+    height: 48px;
+    background-color: #F9F8F6;
+    padding: 0px 12px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.input-date-label {
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    padding-left: 4px;
+}
+
+.icon-info-children {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(55%)
+    sepia(52%) saturate(378%) hue-rotate(346deg)
+    brightness(85%) contrast(87%);
+}
+
+.guest-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+.kids-info-text-container {
+    width: 264px;
+    height: auto;
+    background-color: #ffffff;
+    border: solid 1px #E6E6E6;
+    padding: 12px;
+    color: #0F0D0C;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    display: none;
+    position: absolute;
+    top: -70px;
+    left: 0;
+    z-index: 100;
+}
+
+.guest-container:hover .kids-info-text-container {
+    display: block;
+}
+
+.meals-container {
+    width: 724px;
+    padding: 24px 0px;
+    border-bottom: solid 1px #D7D4D0;
+    border-top: solid 1px #D7D4D0;
+    margin: 32px 0px;
+}
+
+.checkboxes-title {
+    color: #13110E;
+    font-family: "Playfair Display";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--icons-secondary-light, #343434);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px; /* was 16spx, corrected */
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.custom-radio input {
+    display: none;
+}
+
+.radio-box {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #5A4526;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    position: relative;
+}
+
+.custom-radio input:checked + .radio-box::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #5A4526;
+    position: absolute;
+}
+
+.price {
+    color: #828282;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.checkbox-container {
+    display: flex;
+    height: auto;
+    align-items: center;
+    align-content: center;
+    gap: 24px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    width: 656px;
+}
+
+.reserve-button {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #AE7D54;
+    padding: 16px 24px;
+}
+
+.overview-title {
+    color: #13110E;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.overview-secondary-title {
+    color: #5C5245;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    margin-top: 16px;
+}
+
+.go-back {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.back-icon {
+    transform: rotate(90deg);
+}
+
+.room-overview-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.reservation {
+    width: 100%;
+}
+
+.right-line-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #C6C4BC;
+    margin: 24px 0px;
+}
+
+.price-text {
+    color: #5C5245;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+}
+
+.price-main {
+    color: #13110E;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+}
+
+.price-container-reserve {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 64px;
+}
+
+.currency {
+    color: #13110E;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+}
+
+.conference-secondary-title {
+    color: #988F81;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    margin-top: 12px;
+}
+
+.conference-payment-container {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+.conference-payment.active {
+    display: flex;
+    width: 252px;
+    padding: 20px 16px;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #CCC;
+    background: #F3EFEB;
+}
+
+.conference-payment {
+    display: flex;
+    width: 252px;
+    padding: 20px 16px;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #E5E5E5;
+}
+
+.reserve-form-container.conference {
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+/* We remove the old .day / .hour display rules.
+   The JS toggles .hidden-form vs .active-form. */
+/*.reserve-form-container.day { display: none; }*/
+/*.reserve-form-container.hour { display: none; }*/
+
+/* Adjust child tooltip offset for halls */
+.kids-info-text-container.conference {
+    margin-top: -25px;
+}
+
+/* Classes used by JS toggling */
+.hidden-form {
+    display: none !important;
+}
+.active-form {
+    display: grid !important; /* Desktop by default */
+}
+
+/* ---------- Media Queries ---------- */
+
+@media (width < 1300px) {
+    .reservation-form-left {
+        padding: 64px 32px;
+    }
+    .reservation-form-right {
+        width: 456px !important;
+        height: 880px;
+        padding: 56px 32px 0px 32px;
+    }
+    .reservation-input {
+        width: 250px;
+    }
+    .reserve-form-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        width: 524px;
+        margin-top: 32px;
+    }
+    .checkbox-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        width: 100%;
+    }
+}
+
+/* For widths below 1050px, switch the active form to flex, one column */
+@media (width < 1050px) {
+    .reservation-form {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* Force the active form to flex (single column) */
+    .active-form {
+        display: flex !important;
+        flex-direction: column;
+    }
+    .reservation-form-right {
+        height: 1220px; /* Or auto if you prefer */
+        padding: 56px 78px 0px 78px;
+    }
+    .input-type-date-container {
+        width: 100%;
+    }
+    .reservation-input {
+        width: 100%;
+    }
+}
+
+/* Below 820px, stack everything vertically, single column for forms */
+@media (width < 820px) {
+    .reservation-form {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .reservation-form-right {
+        width: 100%;
+        height: 880px; /* or auto */
+        padding: 56px 20px 0px 20px;
+    }
+    .reserve-form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        margin-top: 32px;
+    }
+    .reservation-input,
+    .reservation-input select {
+        width: 100% !important;
+    }
+    .conference-payment-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .conference-payment {
+        width: 100%;
+    }
+    .room-overview-container img {
+        max-width: 100%;
+        height: auto;
+    }
+    .price-container-reserve {
+        margin-bottom: 40px;
+    }
+    /* Ensure only the active form is visible, as flex. */
+    .hidden-form {
+        display: none !important;
+    }
+    .active-form {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+@media (width < 420px) {
+    /* Tighter layout on very narrow screens */
+    .reservation-form-left {
+        padding: 32px 16px;
+    }
+    .reservation-form-right {
+        width: 100% !important;
+        height: auto;
+        padding: 32px 16px 0 16px;
+    }
+    .reservation-input {
+        width: 100% !important;
+    }
+    .reserve-form-container {
+        width: 100%;
+        margin-top: 24px;
+        gap: 16px; /* a bit narrower gap */
+    }
+    .active-form {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Stacked radio buttons, each always 100% wide */
+    .conference-payment-container {
+        display: flex;
+        flex-direction: column; /* stack them vertically */
+        gap: 8px;
+        width: 100%;
+    }
+    /* Ensure both the normal and active states share 100% width */
+    .conference-payment,
+    .conference-payment.active {
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 16px; /* keep your padding as you like */
+    }
+
+    .meals-container {
+        width: 100%;
+        margin: 24px 0;
+    }
+    .checkbox-container {
+        width: 100%;
+    }
+    .overview-secondary-title {
+        font-size: 13px;
+    }
+    .price-container-reserve {
+        margin-bottom: 24px;
+    }
+}

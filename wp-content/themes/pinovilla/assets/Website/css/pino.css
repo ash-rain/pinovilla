@@ -1,0 +1,139 @@
+.navbar-link{
+    color: var(--theme-color-white);
+
+}
+
+.navbar-link:is(:hover, :focus-visible){
+    cursor: pointer;
+    color: var(--theme-color1);
+}
+
+.pino-rooms{
+    min-width: 370px;
+    width: 100%;
+    height: 275px;
+}
+
+.index-sea-icons{
+    width: 50px;
+    height: 50px;
+}
+
+.menu-img-container{
+    width: 80px;
+    height: 80px;
+}
+
+
+.parallax-image-pino{
+    width: 100%;
+    height: auto;
+}
+
+
+.footer-logo{
+    width: 120px;
+    height: auto;
+}
+
+.copyright-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.codemode-logo{
+    width: 90px;
+}
+
+.villa-image-1{
+    width: 374px;
+    height: 386px;
+}
+
+.villa-image-2{
+    width: 264px;
+    height: 200px;
+}
+
+.about-villa-big{
+    width: 375px;
+    height: 590px;
+}
+
+.about-villa-small{
+    width: 280px;
+    height: 280px;
+}
+
+.restaurant-icon{
+    width: 64px;
+    height: 64px;
+}
+
+.conference-room{
+    width: 730px;
+    height: 500px;
+}
+
+
+
+.btn-box.booking{
+    justify-self: center;
+    align-self: center;
+}
+
+.sec-title.text-center.booking{
+    margin-top: 64px;
+}
+
+@media (max-width: 1120px){
+    .conference-room{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 560px){
+    .about-villa-big{
+        width: 100%;
+    }
+    
+    .about-villa-small{
+        width: 100%;
+    }
+    
+    .inner-column{
+        flex-direction: column;
+    }
+    
+    .image-column.col-lg-7{
+        display: none;
+    }
+}
+
+
+@media (max-width: 400px){
+    .contact-block .content-box .text-two {
+
+        font-size: 24px;
+    }
+}
+
+.feature-block-four .inner-box .image {
+    max-width: unset;
+    width: 100%;
+}
+
+@media (max-width: 990px){
+    .feature-row{
+        margin-bottom: 12px;
+    }
+}
+
+.index-hero{
+    object-fit: cover;
+}
+
+

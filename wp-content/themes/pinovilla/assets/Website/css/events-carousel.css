@@ -1,0 +1,115 @@
+/* ───────── EVENTS CAROUSEL ───────── */
+.events-carousel {
+    position: relative;
+    max-width: 1000px;       /* tweak if you want narrower/wider */
+    margin: 0 auto;
+}
+
+/* Fixed visual area for all slides */
+.events-carousel-track {
+    position: relative;
+    height: 560px;           /* desktop height – adjust to taste */
+}
+
+/* Stack slides on top of each other */
+.events-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.events-slide.active {
+    opacity: 1;
+}
+
+/* Make images fill and crop, never stretch */
+.events-slide-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;       /* key: crop to fit */
+}
+
+/* Caption (optional) */
+.events-slide-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    color: #fff;
+}
+
+/* ───────── ARROWS ───────── */
+.events-carousel-arrow {
+    position: absolute;
+    top: 50%;                         /* center vertically */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.events-carousel-arrow span {
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 8px;
+}
+
+.events-carousel-arrow.prev {
+    left: 12px;                      /* left side of photo */
+}
+
+.events-carousel-arrow.next {
+    right: 12px;                     /* right side of photo */
+}
+
+.events-carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.65);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* ───────── DOTS ───────── */
+.events-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.events-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    padding: 0;
+}
+
+.events-dot.active {
+    background: #333;
+}
+
+/* ───────── RESPONSIVE HEIGHT ───────── */
+@media (max-width: 767px) {
+    /*.events-carousel-track {*/
+    /*    height: 260px;               
+    /*}*/
+
+    /*.events-carousel-arrow {*/
+    /*    width: 32px;*/
+    /*    height: 32px;*/
+    /*}*/
+}

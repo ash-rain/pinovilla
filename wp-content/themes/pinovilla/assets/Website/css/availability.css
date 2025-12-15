@@ -1,0 +1,133 @@
+.availability-table-wrapper {
+  margin: 24px auto 56px;
+}
+
+.availability-table-scroll {
+  overflow-x: auto;
+}
+
+.availability-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.availability-table th,
+.availability-table td {
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.availability-table th {
+  font-weight: 700;
+  background: #AE7D54;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.availability-table td:first-child,
+.availability-table th:first-child {
+  width: 140px;
+  white-space: nowrap;
+}
+
+.availability-table__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.availability-table__list li {
+  background: #f1f6ff;
+  border: 1px solid #dbe6ff;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 15px;
+
+  position: relative;
+  font-size: 16px;
+  line-height: 25px;
+  overflow: hidden;
+  color: var(--theme-color1);
+  border: 1px solid var(--theme-color1);
+  background: #f8f5f0;
+  text-transform: uppercase;
+}
+
+.availability-table tbody tr:hover {
+  background: #f8f5f0;
+}
+
+.availability-table__price {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.availability-table__price span {
+  font-weight: 400;
+  color: #6b7280;
+  margin-left: 4px;
+}
+
+.availability-table__action {
+  text-align: right;
+}
+
+.availability-table__book-btn {
+  padding: 10px 16px;
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .availability-table th,
+  .availability-table td {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+  }
+
+  .availability-table tr {
+    display: block;
+    padding: 10px 8px 14px;
+    border-bottom: 1px solid #eef0f3;
+    background: #ffffff;
+  }
+
+  .availability-table th {
+    display: none;
+  }
+
+  .availability-table td {
+    padding: 10px 14px;
+    font-weight: 600;
+  }
+
+  .availability-table td::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    margin-right: 6px;
+    color: #6b7280;
+  }
+
+  .availability-table__list {
+    gap: 8px;
+  }
+
+  .availability-table__price,
+  .availability-table__action {
+    text-align: left;
+    margin-top: 6px;
+  }
+
+  .availability-table__book-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
