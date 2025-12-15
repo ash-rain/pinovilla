@@ -9,7 +9,7 @@ function pinovilla_scripts() {
     wp_enqueue_style('slick', get_template_directory_uri() . '/assets/Website/css/slick.css');
     wp_enqueue_style('pino-reservation', get_template_directory_uri() . '/assets/Website/css/pino-reservation.css');
     wp_enqueue_style('availability', get_template_directory_uri() . '/assets/Website/css/availability.css');
-    wp_enqueue_style('cookies', get_template_directory_uri() . '/assets/Website/css/cookies.css');
+
     wp_enqueue_style('events-carousel', get_template_directory_uri() . '/assets/Website/css/events-carousel.css');
 
     // JS

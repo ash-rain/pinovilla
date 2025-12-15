@@ -89,8 +89,7 @@ function process_html_dom($html, $page_title) {
         // Let's just check if it was part of the main content string.
         // Actually, simpler: just append it if it's not a child of main.
         if (!$main || !$main->contains($contactSection)) {
-             $content .= extract_inner_html($contactSection->parentNode); // This might be too much if parent is body
-             // Better: just save the section itself
+             // Just save the section itself
              $content .= $dom->saveHTML($contactSection);
         }
     }
@@ -155,6 +154,9 @@ function process_html_dom($html, $page_title) {
 
 function process_content_string($content) {
     // Replace asset paths
+    // Normalize relative paths first
+    $content = str_replace('./assets/', '/assets/', $content);
+    // Then replace absolute /assets/ with theme path
     $content = str_replace('/assets/', '/wp-content/themes/pinovilla/assets/', $content);
     
     // Regex replacements for links
