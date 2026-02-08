@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Seed the RoomAvalability page into WordPress.
  *
@@ -11,21 +12,21 @@ $slug  = 'roomavalability';
 $title = 'Room Availability';
 
 // Check if page already exists
-$existing = get_page_by_path( $slug );
-if ( $existing ) {
+$existing = get_page_by_path($slug);
+if ($existing) {
     echo "✅ Page '{$title}' already exists (ID: {$existing->ID}, slug: {$slug})\n";
-    echo "   URL: " . get_permalink( $existing->ID ) . "\n";
+    echo "   URL: " . get_permalink($existing->ID) . "\n";
 } else {
-    $page_id = wp_insert_post( array(
+    $page_id = wp_insert_post(array(
         'post_title'   => $title,
         'post_name'    => $slug,
         'post_status'  => 'publish',
         'post_type'    => 'page',
         'post_content' => '', // Content is rendered by the page template
         'post_author'  => 1,
-    ) );
+    ));
 
-    if ( is_wp_error( $page_id ) ) {
+    if (is_wp_error($page_id)) {
         echo "❌ Error creating page: " . $page_id->get_error_message() . "\n";
         exit(1);
     }

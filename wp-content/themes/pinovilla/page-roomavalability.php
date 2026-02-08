@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Room Availability
  * Slug: roomavalability
@@ -30,8 +31,8 @@ get_header();
                         <h4 data-i18n="form.checkin"><label for="StartDate">Настаняване</label></h4>
                         <div class="chk-field">
                             <input class="date-pick" type="date" name="StartDate"
-                                   value="<?php echo esc_attr(isset($_GET['StartDate']) ? $_GET['StartDate'] : date('Y-m-d')); ?>"
-                                   min="<?php echo date('Y-m-d'); ?>"/>
+                                value="<?php echo esc_attr(isset($_GET['StartDate']) ? $_GET['StartDate'] : date('Y-m-d')); ?>"
+                                min="<?php echo date('Y-m-d'); ?>" />
                             <i class="fas fa-angle-down"></i>
                         </div>
                     </div>
@@ -40,8 +41,8 @@ get_header();
                         <h4 data-i18n="form.checkout"><label for="EndDate">Освобождаване</label></h4>
                         <div class="chk-field">
                             <input class="date-pick" type="date" name="EndDate"
-                                   value="<?php echo esc_attr(isset($_GET['EndDate']) ? $_GET['EndDate'] : date('Y-m-d', strtotime('+1 day'))); ?>"
-                                   min="<?php echo date('Y-m-d'); ?>"/>
+                                value="<?php echo esc_attr(isset($_GET['EndDate']) ? $_GET['EndDate'] : date('Y-m-d', strtotime('+1 day'))); ?>"
+                                min="<?php echo date('Y-m-d'); ?>" />
                             <i class="fas fa-angle-down"></i>
                         </div>
                     </div>
@@ -50,12 +51,12 @@ get_header();
                         <h4 data-i18n="form.guests">Гости</h4>
                         <div class="chk-field">
                             <input type="number" name="Guests" placeholder="0"
-                                   value="<?php echo esc_attr(isset($_GET['Guests']) ? $_GET['Guests'] : ''); ?>"/>
+                                value="<?php echo esc_attr(isset($_GET['Guests']) ? $_GET['Guests'] : ''); ?>" />
                         </div>
                     </div>
 
                     <button type="submit" class="theme-btn btn-style-one">
-                        <span class="btn-title" data-i18n="form.check">Провери <br/>наличност</span>
+                        <span class="btn-title" data-i18n="form.check">Провери <br />наличност</span>
                     </button>
                 </div>
             </form>
@@ -88,7 +89,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/economic-double.jpeg"
-                                             alt="Economic Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Economic Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="room.economic.name">Икономична стая</strong>
                                     </div>
                                 </td>
@@ -113,7 +114,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/double.jpeg"
-                                             alt="Double Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Double Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="room.double.name">Двойна стая</strong>
                                     </div>
                                 </td>
@@ -138,7 +139,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/superior-room.png"
-                                             alt="Superior Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Superior Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="room.superior.name">Супериорна стая</strong>
                                     </div>
                                 </td>
@@ -164,7 +165,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/deluxe-room.png"
-                                             alt="Boutique Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Boutique Room" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="room.boutique.name">Бутикова стая</strong>
                                     </div>
                                 </td>
@@ -190,7 +191,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/apartment.jpeg"
-                                             alt="Apartment 1" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Apartment 1" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="navbar.room.apartment1">Апартамент 1</strong>
                                     </div>
                                 </td>
@@ -216,7 +217,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/apartment.jpeg"
-                                             alt="Apartment 2" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Apartment 2" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="navbar.room.apartment2">Апартамент 2</strong>
                                     </div>
                                 </td>
@@ -242,7 +243,7 @@ get_header();
                                 <td data-label="Стая">
                                     <div style="display:flex; align-items:center; gap:12px;">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/villa.jpg"
-                                             alt="Villa Pino Casa" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
+                                            alt="Villa Pino Casa" style="width:80px;height:56px;object-fit:cover;border-radius:6px;">
                                         <strong data-i18n="room.villa.name">Самостоятелна къща</strong>
                                         <span style="background:#AE7D54;color:#fff;font-size:11px;padding:2px 8px;border-radius:4px;text-transform:uppercase;" data-i18n="availability.premium">Pino Casa</span>
                                     </div>
@@ -292,79 +293,86 @@ get_header();
 </main>
 
 <style>
-/* Room Availability page overrides */
-.page-breadcrumb {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-.page-breadcrumb li::before {
-    content: "/ ";
-    margin-right: 8px;
-    color: #666;
-}
-.page-breadcrumb li:first-child::before {
-    content: "";
-    margin-right: 0;
-}
-.page-breadcrumb li a {
-    text-decoration: none;
-}
-.page-breadcrumb li a:hover {
-    color: #fff !important;
-}
+    /* Room Availability page overrides */
+    .page-breadcrumb {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
 
-.amelia-book-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(169, 123, 86, 0.3);
-}
+    .page-breadcrumb li::before {
+        content: "/ ";
+        margin-right: 8px;
+        color: #666;
+    }
 
-.amelia-booking-wrapper {
-    transition: all 0.3s ease;
-}
+    .page-breadcrumb li:first-child::before {
+        content: "";
+        margin-right: 0;
+    }
 
-/* Smooth scroll offset for amelia-booking anchor */
-#amelia-booking {
-    scroll-margin-top: 100px;
-}
+    .page-breadcrumb li a {
+        text-decoration: none;
+    }
 
-.pb-120 {
-    padding-bottom: 120px;
-}
+    .page-breadcrumb li a:hover {
+        color: #fff !important;
+    }
+
+    .amelia-book-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(169, 123, 86, 0.3);
+    }
+
+    .amelia-booking-wrapper {
+        transition: all 0.3s ease;
+    }
+
+    /* Smooth scroll offset for amelia-booking anchor */
+    #amelia-booking {
+        scroll-margin-top: 100px;
+    }
+
+    .pb-120 {
+        padding-bottom: 120px;
+    }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll to Amelia booking when any "Резервирай" button is clicked
-    document.querySelectorAll('.amelia-book-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var target = document.getElementById('amelia-booking');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scroll to Amelia booking when any "Резервирай" button is clicked
+        document.querySelectorAll('.amelia-book-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.getElementById('amelia-booking');
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-    });
 
-    // Flatpickr sync for the check-in/check-out on this page
-    var startInput = document.querySelector('input[name="StartDate"]');
-    var endInput   = document.querySelector('input[name="EndDate"]');
-    if (startInput && endInput) {
-        startInput.addEventListener('change', function() {
-            if (!endInput.value || endInput.value <= startInput.value) {
-                var d = new Date(startInput.value);
-                d.setDate(d.getDate() + 1);
-                var mm = String(d.getMonth() + 1).padStart(2, '0');
-                var dd = String(d.getDate()).padStart(2, '0');
-                endInput.value = d.getFullYear() + '-' + mm + '-' + dd;
-            }
-            endInput.min = startInput.value;
-        });
-    }
-});
+        // Flatpickr sync for the check-in/check-out on this page
+        var startInput = document.querySelector('input[name="StartDate"]');
+        var endInput = document.querySelector('input[name="EndDate"]');
+        if (startInput && endInput) {
+            startInput.addEventListener('change', function() {
+                if (!endInput.value || endInput.value <= startInput.value) {
+                    var d = new Date(startInput.value);
+                    d.setDate(d.getDate() + 1);
+                    var mm = String(d.getMonth() + 1).padStart(2, '0');
+                    var dd = String(d.getDate()).padStart(2, '0');
+                    endInput.value = d.getFullYear() + '-' + mm + '-' + dd;
+                }
+                endInput.min = startInput.value;
+            });
+        }
+    });
 </script>
 
 <?php get_footer(); ?>

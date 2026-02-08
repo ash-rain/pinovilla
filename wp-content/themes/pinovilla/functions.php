@@ -1,5 +1,6 @@
 <?php
-function pinovilla_scripts() {
+function pinovilla_scripts()
+{
     // CSS
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/Website/css/bootstrap.min.css');
     wp_enqueue_style('flatpickr', get_template_directory_uri() . '/assets/Website/css/flatpickr.min.css');
@@ -31,14 +32,15 @@ function pinovilla_scripts() {
     wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/Website/js/swiper.min.js', array(), null, true);
     wp_enqueue_script('translate', get_template_directory_uri() . '/assets/Website/js/translate.js', array(), null, true);
     wp_enqueue_script('wow', get_template_directory_uri() . '/assets/Website/js/wow.js', array(), null, true);
-    
+
     // Main script
     wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/Website/js/script.js', array('jquery'), null, true);
     wp_enqueue_script('events-carousel-js', get_template_directory_uri() . '/assets/Website/js/events-carousel.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'pinovilla_scripts');
 
-function pinovilla_setup() {
+function pinovilla_setup()
+{
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     register_nav_menus(array(
@@ -51,7 +53,8 @@ add_action('after_setup_theme', 'pinovilla_setup');
  * Case-insensitive rewrite for /RoomAvalability → roomavalability page
  * This lets /RoomAvalability, /roomavalability, /roomAvailability all resolve
  */
-function pinovilla_room_availability_rewrite() {
+function pinovilla_room_availability_rewrite()
+{
     add_rewrite_rule(
         '^[Rr]oom[Aa]val[Aa]bility/?$',
         'index.php?pagename=roomavalability',
@@ -63,14 +66,14 @@ add_action('init', 'pinovilla_room_availability_rewrite');
 /**
  * Load the page-roomavalability.php template for the roomavalability page slug
  */
-function pinovilla_room_availability_template( $template ) {
-    if ( is_page('roomavalability') || is_page('RoomAvalability') ) {
+function pinovilla_room_availability_template($template)
+{
+    if (is_page('roomavalability') || is_page('RoomAvalability')) {
         $new_template = locate_template('page-roomavalability.php');
-        if ( $new_template ) {
+        if ($new_template) {
             return $new_template;
         }
     }
     return $template;
 }
 add_filter('template_include', 'pinovilla_room_availability_template');
-?>
