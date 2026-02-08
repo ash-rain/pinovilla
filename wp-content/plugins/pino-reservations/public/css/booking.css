@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════
+   Pino Reservations – public front-end styles
+   ═══════════════════════════════════════════ */
+
+/* ── Combo cards ── */
+.pino-combos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.pino-combo-card {
+    background: #fff;
+    border: 1px solid #e8e3dc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    transition: box-shadow .25s, transform .25s;
+}
+.pino-combo-card:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.pino-combo-card__header {
+    background: #13110E;
+    color: #fff;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pino-combo-card__label {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 500;
+}
+.pino-combo-card__cap {
+    font-size: 14px;
+    color: #AE7D54;
+}
+
+.pino-combo-card__body {
+    padding: 18px 20px 10px;
+}
+.pino-combo-card__type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f0ece6;
+    font-size: 15px;
+}
+.pino-combo-card__type:last-child { border-bottom: none; }
+
+.pino-combo-card__badge {
+    background: #AE7D54;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.pino-combo-card__type-price {
+    margin-left: auto;
+    color: #828282;
+    font-size: 14px;
+}
+
+.pino-combo-card__footer {
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0ece6;
+    background: #faf8f5;
+}
+.pino-combo-card__total {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #13110E;
+}
+.pino-combo-card__total small {
+    font-size: 13px;
+    font-weight: 400;
+    color: #828282;
+}
+
+/* ── Selected summary ── */
+.pino-selected-summary {
+    margin-bottom: 16px;
+}
+.pino-selected-info {
+    background: #faf8f5;
+    border: 1px solid #e8e3dc;
+    border-radius: 10px;
+    padding: 20px 24px;
+}
+.pino-selected-info p { margin: 4px 0; color: #555; }
+.pino-selected-info strong { color: #13110E; }
+.pino-room-price { margin-top: 8px !important; }
+.pino-room-price strong { color: #AE7D54; font-size: 18px; }
+
+/* ── Price box ── */
+.pino-price-box {
+    background: #13110E;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+}
+.pino-price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.pino-price-row:last-child { border-bottom: none; }
+.pino-price-total {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+    color: #AE7D54;
+}
+
+/* ── No results ── */
+.pino-no-combos {
+    background: #faf8f5;
+    border-radius: 12px;
+    border: 1px solid #e8e3dc;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .pino-combos-list {
+        grid-template-columns: 1fr;
+    }
+    .reserve-form-container {
+        grid-template-columns: 1fr !important;
+    }
+}

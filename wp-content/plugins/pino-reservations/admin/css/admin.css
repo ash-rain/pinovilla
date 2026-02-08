@@ -1,0 +1,84 @@
+/* Pino Reservations – Admin Styles */
+
+.pino-admin .pino-stats {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0;
+}
+.pino-admin .pino-stat-box {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-left: 4px solid #AE7D54;
+    padding: 16px 24px;
+    text-decoration: none;
+    color: #23282d;
+    min-width: 120px;
+    text-align: center;
+    transition: box-shadow .2s;
+}
+.pino-admin .pino-stat-box:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+.pino-admin .pino-stat-num {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #AE7D54;
+}
+
+.pino-admin .pino-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.pino-admin .pino-two-col {
+    display: flex;
+    gap: 32px;
+    margin-top: 16px;
+}
+.pino-admin .pino-col-form {
+    flex: 0 0 400px;
+    max-width: 400px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 16px 20px;
+}
+.pino-admin .pino-col-table {
+    flex: 1;
+    min-width: 0;
+}
+
+.pino-admin .pino-detail-grid {
+    display: flex;
+    gap: 24px;
+    margin: 20px 0;
+}
+.pino-admin .pino-detail-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    flex: 1;
+}
+.pino-admin .pino-detail-card h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #AE7D54;
+    padding-bottom: 8px;
+}
+
+@media (max-width: 960px) {
+    .pino-admin .pino-two-col {
+        flex-direction: column;
+    }
+    .pino-admin .pino-col-form {
+        flex: unset;
+        max-width: unset;
+    }
+    .pino-admin .pino-detail-grid {
+        flex-direction: column;
+    }
+}

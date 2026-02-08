@@ -103,7 +103,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
                                 <td data-label="Цена" class="availability-table__price">194 лв. <span>/ 99 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="economic">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="economic">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -128,7 +128,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
                                 <td data-label="Цена" class="availability-table__price">207 лв. <span>/ 106 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="double">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="double">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -154,7 +154,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
                                 <td data-label="Цена" class="availability-table__price">219 лв. <span>/ 112 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="superior">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="superior">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -180,7 +180,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
                                 <td data-label="Цена" class="availability-table__price">238 лв. <span>/ 122 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="boutique">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="boutique">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -206,7 +206,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-4</td>
                                 <td data-label="Цена" class="availability-table__price">257 лв. <span>/ 131 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="apartment1">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="apartment1">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -232,7 +232,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-4</td>
                                 <td data-label="Цена" class="availability-table__price">257 лв. <span>/ 131 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="apartment2">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="apartment2">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -261,7 +261,7 @@ get_header();
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-6*</td>
                                 <td data-label="Цена" class="availability-table__price">700 лв. <span>/ 358 €</span></td>
                                 <td data-label="" class="availability-table__action">
-                                    <a href="#amelia-booking" class="theme-btn btn-style-one availability-table__book-btn amelia-book-btn" data-room="villa">
+                                    <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="villa">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
                                     </a>
                                 </td>
@@ -273,19 +273,19 @@ get_header();
         </div>
     </section>
 
-    <!-- ░░░ AMELIA BOOKING SECTION ░░░ -->
-    <section id="amelia-booking" class="pt-0 pb-120">
+    <!-- ░░░ PINO BOOKING SECTION ░░░ -->
+    <section id="pino-booking" class="pt-0 pb-120">
         <div class="auto-container">
             <div class="sec-title text-center booking">
                 <span class="sub-title" data-i18n="availability.booking.subtitle">Онлайн резервация</span>
                 <h2 data-i18n="availability.booking.title">Резервирайте вашия престой</h2>
                 <p style="color:#828282; margin-top:12px; font-size:16px;" data-i18n="availability.booking.desc">
-                    Изберете услуга, дата и час за вашата резервация чрез нашата система за онлайн резервации.
+                    Изберете дати и брой гости, за да видите наличните стаи и да направите резервация.
                 </p>
             </div>
 
-            <div class="amelia-booking-wrapper" style="max-width:900px; margin:0 auto; background:#fff; padding:40px; border-radius:12px; box-shadow:0 16px 38px rgba(0,0,0,0.06);">
-                <?php echo do_shortcode('[ameliastepbooking]'); ?>
+            <div style="max-width:960px; margin:0 auto;">
+                <?php echo do_shortcode('[pino_booking]'); ?>
             </div>
         </div>
     </section>
@@ -322,17 +322,17 @@ get_header();
         color: #fff !important;
     }
 
-    .amelia-book-btn:hover {
+    .pino-book-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(169, 123, 86, 0.3);
     }
 
-    .amelia-booking-wrapper {
+    .pino-booking-wrapper {
         transition: all 0.3s ease;
     }
 
     /* Smooth scroll offset for amelia-booking anchor */
-    #amelia-booking {
+    #pino-booking {
         scroll-margin-top: 100px;
     }
 
@@ -344,10 +344,10 @@ get_header();
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Smooth scroll to Amelia booking when any "Резервирай" button is clicked
-        document.querySelectorAll('.amelia-book-btn').forEach(function(btn) {
+        document.querySelectorAll('.pino-book-btn').forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                var target = document.getElementById('amelia-booking');
+                var target = document.getElementById('pino-booking');
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
