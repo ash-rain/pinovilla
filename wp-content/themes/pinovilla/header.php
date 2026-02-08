@@ -37,21 +37,27 @@
                            data-i18n="navbar.location">Албена, България</a>
                     </span>
                     <div style="display:flex; align-items: center; justify-content: center; margin-left: 30px">
-                        <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a
-                                href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="bg" style="font-size: 12px; color: white">BG</a>
-                        </li>
-                        <li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">
-                            |
-                        </li>
-                        <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a
-                                href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="en" style="font-size: 12px; color: white">EN</a>
-                        </li>
-                        <li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">
-                            |
-                        </li>
-                        <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a
-                                href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="ro" style="font-size: 12px; color: white">RO</a>
-                        </li>
+                        <?php
+                        if ( function_exists( 'pll_the_languages' ) ) {
+                            $langs = pll_the_languages( array( 'raw' => 1 ) );
+                            $first = true;
+                            foreach ( $langs as $lang ) {
+                                if ( ! $first ) {
+                                    echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">|</li>';
+                                }
+                                $first = false;
+                                echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">'
+                                    . '<a href="' . esc_url( $lang['url'] ) . '" style="font-size: 12px; color: white">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>'
+                                    . '</li>';
+                            }
+                        } else {
+                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white">BG</a></li>';
+                            echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">|</li>';
+                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white">EN</a></li>';
+                            echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">|</li>';
+                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white">RO</a></li>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -78,22 +84,22 @@
                         <li><a data-i18n="navbar.home" href="<?php echo home_url('/'); ?>">Начало</a></li>
 
                         <li class="dropdown">
-                            <a data-i18n="navbar.rooms" href="<?php echo home_url('/Rooms'); ?>">Стаи</a>
+                            <a data-i18n="navbar.rooms" href="<?php echo home_url('/rooms'); ?>">Стаи</a>
                             <ul>
-                                <li><a href="<?php echo home_url('/Rooms#ECONOMIC'); ?>" data-i18n="navbar.room.economic">Икономична</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#DOUBLE'); ?>" data-i18n="navbar.room.double">Двойна</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#SUPERIOR'); ?>" data-i18n="navbar.room.superior">Супериорна</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#BOUTIQUE'); ?>" data-i18n="navbar.room.boutique">Бутикова</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#APARTMENT1'); ?>" data-i18n="navbar.room.apartment1">Апартамент 1</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#APARTMENT2'); ?>" data-i18n="navbar.room.apartment2">Апартамент 2</a></li>
+                                <li><a href="<?php echo home_url('/rooms#ECONOMIC'); ?>" data-i18n="navbar.room.economic">Икономична</a></li>
+                                <li><a href="<?php echo home_url('/rooms#DOUBLE'); ?>" data-i18n="navbar.room.double">Двойна</a></li>
+                                <li><a href="<?php echo home_url('/rooms#SUPERIOR'); ?>" data-i18n="navbar.room.superior">Супериорна</a></li>
+                                <li><a href="<?php echo home_url('/rooms#BOUTIQUE'); ?>" data-i18n="navbar.room.boutique">Бутикова</a></li>
+                                <li><a href="<?php echo home_url('/rooms#APARTMENT1'); ?>" data-i18n="navbar.room.apartment1">Апартамент 1</a></li>
+                                <li><a href="<?php echo home_url('/rooms#APARTMENT2'); ?>" data-i18n="navbar.room.apartment2">Апартамент 2</a></li>
                             </ul>
                         </li>
 
-                        <li><a data-i18n="navbar.villa" href="<?php echo home_url('/Villa'); ?>">Къща</a></li>
-                        <li><a data-i18n="navbar.restaurant" href="<?php echo home_url('/Restaurant'); ?>">Ресторант</a></li>
-                        <li><a data-i18n="navbar.halls" href="<?php echo home_url('/Halls'); ?>">Зали</a></li>
-                        <li><a data-i18n="navbar.about" href="<?php echo home_url('/About'); ?>">За нас</a></li>
-                        <li><a data-i18n="navbar.contact" href="<?php echo home_url('/Contact'); ?>">Контакти</a></li>
+                        <li><a data-i18n="navbar.villa" href="<?php echo home_url('/villa'); ?>">Къща</a></li>
+                        <li><a data-i18n="navbar.restaurant" href="<?php echo home_url('/restaurant'); ?>">Ресторант</a></li>
+                        <li><a data-i18n="navbar.halls" href="<?php echo home_url('/halls'); ?>">Зали</a></li>
+                        <li><a data-i18n="navbar.about" href="<?php echo home_url('/about'); ?>">За нас</a></li>
+                        <li><a data-i18n="navbar.contact" href="<?php echo home_url('/contact'); ?>">Контакти</a></li>
 
                         <!-- Language switch -->
 
@@ -106,21 +112,27 @@
 
             <div class="outer-box">
                 <div class="lang-switch-container">
-                    <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="bg" style="font-size: 12px; color:white;">BG</a>
-                    </li>
-                    <li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">
-                        |
-                    </li>
-                    <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="en" style="font-size: 12px; color:white;">EN</a>
-                    </li>
-                    <li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">
-                        |
-                    </li>
-                    <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="ro" style="font-size: 12px; color:white;">RO</a>
-                    </li>
+                    <?php
+                    if ( function_exists( 'pll_the_languages' ) ) {
+                        $langs = pll_the_languages( array( 'raw' => 1 ) );
+                        $first = true;
+                        foreach ( $langs as $lang ) {
+                            if ( ! $first ) {
+                                echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">|</li>';
+                            }
+                            $first = false;
+                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">'
+                                . '<a href="' . esc_url( $lang['url'] ) . '" style="font-size: 12px; color:white;">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>'
+                                . '</li>';
+                        }
+                    } else {
+                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color:white;">BG</a></li>';
+                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">|</li>';
+                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color:white;">EN</a></li>';
+                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">|</li>';
+                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color:white;">RO</a></li>';
+                    }
+                    ?>
                 </div>
                 <div class="ui-btn-outer"></div>
                 <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
@@ -144,21 +156,27 @@
                 <ul class="navigation clearfix"></ul>
 
                 <div class="lang-switch-container" style="margin-top: 36px; margin-bottom: 12px;">
-                    <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="bg" style="font-size: 12px; color: white;">BG</a>
-                    </li>
-                    <li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">
-                        |
-                    </li>
-                    <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="en" style="font-size: 12px; color: white;">EN</a>
-                    </li>
-                    <li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">
-                        |
-                    </li>
-                    <li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?php echo home_url('/Index'); ?>" class="lang-switch" data-lang="ro" style="font-size: 12px; color: white;">RO</a>
-                    </li>
+                    <?php
+                    if ( function_exists( 'pll_the_languages' ) ) {
+                        $langs = pll_the_languages( array( 'raw' => 1 ) );
+                        $first = true;
+                        foreach ( $langs as $lang ) {
+                            if ( ! $first ) {
+                                echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">|</li>';
+                            }
+                            $first = false;
+                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">'
+                                . '<a href="' . esc_url( $lang['url'] ) . '" style="font-size: 12px; color: white;">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>'
+                                . '</li>';
+                        }
+                    } else {
+                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white;">BG</a></li>';
+                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">|</li>';
+                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white;">EN</a></li>';
+                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">|</li>';
+                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white;">RO</a></li>';
+                    }
+                    ?>
                 </div>
 
                 <ul class="contact-list-one">

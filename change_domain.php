@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WordPress Domain Change Script
  * 
@@ -100,44 +101,44 @@ $processed_tables = 0;
 foreach ($tables as $table) {
     $table_name = $table[0];
     $processed_tables++;
-    
+
     echo "  Processing table $processed_tables/$table_count: $table_name ... ";
-    
+
     // Get all columns for this table
     $columns = $wpdb->get_results("DESCRIBE $table_name", ARRAY_A);
-    
+
     $table_replacements = 0;
-    
+
     foreach ($columns as $column) {
         $column_name = $column['Field'];
         $column_type = $column['Type'];
-        
+
         // Only process text-based columns
         if (!preg_match('/(text|char|blob)/i', $column_type)) {
             continue;
         }
-        
+
         // Get primary key for updates
         $primary_key = $wpdb->get_row("SHOW KEYS FROM $table_name WHERE Key_name = 'PRIMARY'", ARRAY_A);
         $primary_key_column = $primary_key['Column_name'] ?? null;
-        
+
         if (!$primary_key_column) {
             continue;
         }
-        
+
         // Get all rows for this column
         $rows = $wpdb->get_results("SELECT $primary_key_column, $column_name FROM $table_name", ARRAY_A);
-        
+
         foreach ($rows as $row) {
             $old_value = $row[$column_name];
-            
+
             if (empty($old_value) || !is_string($old_value)) {
                 continue;
             }
-            
+
             // Try to unserialize to check if it's serialized data
             $is_serialized = @unserialize($old_value) !== false || $old_value === 'b:0;';
-            
+
             if ($is_serialized) {
                 // Handle serialized data
                 $new_value = maybe_unserialize($old_value);
@@ -149,7 +150,7 @@ foreach ($tables as $table) {
                 $new_value = str_replace('https://' . $old_domain, 'https://' . $new_domain, $new_value);
                 $new_value = str_replace('//' . $old_domain, '//' . $new_domain, $new_value);
             }
-            
+
             // Update if changed
             if ($old_value !== $new_value) {
                 $wpdb->update(
@@ -162,7 +163,7 @@ foreach ($tables as $table) {
             }
         }
     }
-    
+
     echo "$table_replacements replacements\n";
 }
 
@@ -200,7 +201,8 @@ echo "5. Update DNS records if moving to a new domain\n\n";
 /**
  * Recursively replace domain in arrays and objects
  */
-function domain_replace_recursive($data, $old_domain, $new_domain) {
+function domain_replace_recursive($data, $old_domain, $new_domain)
+{
     if (is_string($data)) {
         // Replace both http and https versions
         $data = str_replace('http://' . $old_domain, 'https://' . $new_domain, $data);
@@ -208,21 +210,21 @@ function domain_replace_recursive($data, $old_domain, $new_domain) {
         $data = str_replace('//' . $old_domain, '//' . $new_domain, $data);
         return $data;
     }
-    
+
     if (is_array($data)) {
         foreach ($data as $key => $value) {
             $data[$key] = domain_replace_recursive($value, $old_domain, $new_domain);
         }
         return $data;
     }
-    
+
     if (is_object($data)) {
         foreach ($data as $key => $value) {
             $data->$key = domain_replace_recursive($value, $old_domain, $new_domain);
         }
         return $data;
     }
-    
+
     return $data;
 }
 

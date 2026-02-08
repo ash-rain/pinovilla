@@ -83,7 +83,7 @@
                         <div class="inner-box">
                             <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/hotel.jpg" alt="">
                             <div class="content-box">
-                                <h6 class="title"><a href="<?php echo home_url('/Rooms'); ?>" data-i18n="service.hotel">Хотел</a></h6>
+                                <h6 class="title"><a href="<?php echo home_url('/rooms'); ?>" data-i18n="service.hotel">Хотел</a></h6>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         <div class="inner-box">
                             <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/restaurant-card.jpg" alt="">
                             <div class="content-box">
-                                <h6 class="title"><a href="<?php echo home_url('/Restaurant'); ?>" data-i18n="service.restaurant">Ресторант</a>
+                                <h6 class="title"><a href="<?php echo home_url('/restaurant'); ?>" data-i18n="service.restaurant">Ресторант</a>
                                 </h6>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                         <div class="inner-box">
                             <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/villa-main.jpg" alt="">
                             <div class="content-box">
-                                <h6 class="title"><a href="<?php echo home_url('/Villa'); ?>" data-i18n="service.villa">Къща</a></h6>
+                                <h6 class="title"><a href="<?php echo home_url('/villa'); ?>" data-i18n="service.villa">Къща</a></h6>
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                             <li data-i18n="about.wifi"><i class="icon fa fa-circle-check"></i>Безплатен Wi-Fi</li>
                         </ul>
                         <div class="btn-box">
-                            <a href="<?php echo home_url('/About'); ?>" class="theme-btn btn-style-one"><span class="btn-title"
+                            <a href="<?php echo home_url('/about'); ?>" class="theme-btn btn-style-one"><span class="btn-title"
                                                                                    data-i18n="about.discover">Открийте още</span></a>
                         </div>
                     </div>
@@ -188,14 +188,14 @@
                 <div class="room-service-block-one col-lg-4 col-sm-6 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
-                            <a href="<?php echo home_url('/Rooms'); ?>">
+                            <a href="<?php echo home_url('/rooms'); ?>">
                                 <img class="image mb-0 pino-rooms" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/economic-double.jpeg" alt="">
                             </a>
                         </div>
                         <div class="content-box">
                             <div class="inner-box">
                                 <!-- room.economic.name -->
-                                <h4 class="title"><a href="<?php echo home_url('/Rooms#ECONOMIC'); ?>" data-i18n="room.economic.name">Икономична
+                                <h4 class="title"><a href="<?php echo home_url('/rooms#ECONOMIC'); ?>" data-i18n="room.economic.name">Икономична
                                         стая</a></h4>
 
                                 <div class="price">194 BGN
@@ -219,14 +219,14 @@
                 <div class="room-service-block-one col-lg-4 col-sm-6 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
-                            <a href="<?php echo home_url('/Rooms'); ?>">
+                            <a href="<?php echo home_url('/rooms'); ?>">
                                 <img class="image mb-0 pino-rooms" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/double.jpeg" alt="">
                             </a>
                         </div>
                         <div class="content-box">
                             <div class="inner-box">
                                 <!-- room.double.name -->
-                                <h4 class="title"><a href="<?php echo home_url('/Rooms#DOUBLE'); ?>" data-i18n="room.double.name">Двойна стая</a>
+                                <h4 class="title"><a href="<?php echo home_url('/rooms#DOUBLE'); ?>" data-i18n="room.double.name">Двойна стая</a>
                                 </h4>
                                 <div class="price">207 BGN
                                     / 105.84 €<span
@@ -248,14 +248,14 @@
                 <div class="room-service-block-one col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <a href="<?php echo home_url('/Rooms'); ?>">
+                            <a href="<?php echo home_url('/rooms'); ?>">
                                 <img class="image mb-0 pino-rooms" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/superior-room.png" alt="">
                             </a>
                         </div>
                         <div class="content-box">
                             <div class="inner-box">
                                 <!-- room.superior.name -->
-                                <h4 class="title"><a href="<?php echo home_url('/Rooms#SUPERIOR'); ?>" data-i18n="room.superior.name">Супериорна
+                                <h4 class="title"><a href="<?php echo home_url('/rooms#SUPERIOR'); ?>" data-i18n="room.superior.name">Супериорна
                                         стая</a></h4>
                                 <div class="price">219 BGN
                                     / 111.97 € <span
@@ -277,14 +277,14 @@
                 <div class="room-service-block-one col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="600ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <a href="<?php echo home_url('/Rooms'); ?>">
+                            <a href="<?php echo home_url('/rooms'); ?>">
                                 <img class="image mb-0 pino-rooms" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/deluxe-room.png" alt="">
                             </a>
                         </div>
                         <div class="content-box">
                             <div class="inner-box">
                                 <!-- room.boutique.name -->
-                                <h4 class="title"><a href="<?php echo home_url('/Rooms#BOUTIQUE'); ?>" data-i18n="room.boutique.name">Бутикова
+                                <h4 class="title"><a href="<?php echo home_url('/rooms#BOUTIQUE'); ?>" data-i18n="room.boutique.name">Бутикова
                                         стая</a>
                                 </h4>
                                 <div class="price">238 BGN
@@ -307,14 +307,14 @@
                 <div class="room-service-block-one col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="600ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <a href="<?php echo home_url('/Rooms'); ?>">
+                            <a href="<?php echo home_url('/rooms'); ?>">
                                 <img class="image mb-0 pino-rooms" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/apartment.jpeg" alt="">
                             </a>
                         </div>
                         <div class="content-box">
                             <div class="inner-box">
                                 <!-- room.apartment.name -->
-                                <h4 class="title"><a href="<?php echo home_url('/Rooms#APARTMENT1'); ?>"
+                                <h4 class="title"><a href="<?php echo home_url('/rooms#APARTMENT1'); ?>"
                                                      data-i18n="room.apartment.name">Апартамент</a>
                                 </h4>
                                 <div class="price">257 BGN
@@ -338,14 +338,14 @@
                 <div class="room-service-block-one col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="600ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <a href="<?php echo home_url('/Villa'); ?>">
+                            <a href="<?php echo home_url('/villa'); ?>">
                                 <img class="image mb-0 pino-rooms" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/villa.jpg" alt="">
                             </a>
                         </div>
                         <div class="content-box">
                             <div class="inner-box">
                                 <!-- room.villa.name -->
-                                <h4 class="title"><a href="<?php echo home_url('/Villa'); ?>" data-i18n="room.villa.name">Самостоятелна къща</a>
+                                <h4 class="title"><a href="<?php echo home_url('/villa'); ?>" data-i18n="room.villa.name">Самостоятелна къща</a>
                                 </h4>
                                 <div class="price">700 BGN
                                     / 357.9 € <span
@@ -916,7 +916,7 @@
                                 обстановка за успешни бизнес срещи, семинари и корпоративни събития.
                             </div>
                             <div class="btn-box">
-                                <a href="<?php echo home_url('/Halls'); ?>" class="theme-btn btn-style-two"><span class="btn-title"
+                                <a href="<?php echo home_url('/halls'); ?>" class="theme-btn btn-style-two"><span class="btn-title"
                                                                                        data-i18n="feature.more">Научете повече</span></a>
                             </div>
                         </div>
@@ -927,7 +927,7 @@
                                 <div class="feature-block-four col-lg-4 col-sm-6 wow fadeIn" data-wow-delay="100ms">
                                     <div class="inner-box">
                                         <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/conference-room-1.jpg" alt="">
-                                        <div class="content-box"><h4 class="title"><a href="<?php echo home_url('/Halls'); ?>"
+                                        <div class="content-box"><h4 class="title"><a href="<?php echo home_url('/halls'); ?>"
                                                                                       data-i18n="feature.events">Събития</a>
                                             </h4></div>
                                     </div>
@@ -935,7 +935,7 @@
                                 <div class="feature-block-four col-lg-4 col-sm-6 wow fadeIn" data-wow-delay="200ms">
                                     <div class="inner-box">
                                         <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/conference-room-2.jpg" alt="">
-                                        <div class="content-box"><h4 class="title"><a href="<?php echo home_url('/Halls'); ?>"
+                                        <div class="content-box"><h4 class="title"><a href="<?php echo home_url('/halls'); ?>"
                                                                                       data-i18n="feature.business">Бизнес
                                                     събирания</a></h4></div>
                                     </div>
@@ -943,7 +943,7 @@
                                 <div class="feature-block-four col-lg-4 col-sm-6 wow fadeIn" data-wow-delay="300ms">
                                     <div class="inner-box">
                                         <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/conference-room-3.jpg" alt="">
-                                        <div class="content-box"><h4 class="title"><a href="<?php echo home_url('/Halls'); ?>"
+                                        <div class="content-box"><h4 class="title"><a href="<?php echo home_url('/halls'); ?>"
                                                                                       data-i18n="feature.celebrations">Празници</a>
                                             </h4></div>
                                     </div>
@@ -1028,7 +1028,7 @@
                                 <h2 data-i18n="contact.title">Свържете се с нас</h2>
                             </div>
 
-                            <form method="post" action="<?php echo home_url('/Contact'); ?>">
+                            <form method="post" action="<?php echo home_url('/contact'); ?>">
                                 
 
                                 <div class="row">

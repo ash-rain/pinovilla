@@ -46,4 +46,31 @@ function pinovilla_setup() {
     ));
 }
 add_action('after_setup_theme', 'pinovilla_setup');
+
+/**
+ * Case-insensitive rewrite for /RoomAvalability → roomavalability page
+ * This lets /RoomAvalability, /roomavalability, /roomAvailability all resolve
+ */
+function pinovilla_room_availability_rewrite() {
+    add_rewrite_rule(
+        '^[Rr]oom[Aa]val[Aa]bility/?$',
+        'index.php?pagename=roomavalability',
+        'top'
+    );
+}
+add_action('init', 'pinovilla_room_availability_rewrite');
+
+/**
+ * Load the page-roomavalability.php template for the roomavalability page slug
+ */
+function pinovilla_room_availability_template( $template ) {
+    if ( is_page('roomavalability') || is_page('RoomAvalability') ) {
+        $new_template = locate_template('page-roomavalability.php');
+        if ( $new_template ) {
+            return $new_template;
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'pinovilla_room_availability_template');
 ?>

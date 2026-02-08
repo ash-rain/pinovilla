@@ -57,12 +57,12 @@
                         <div class="widget-content">
                             <ul class="user-links">
                                 <li><a data-i18n="navbar.home" href="<?php echo home_url('/'); ?>">Начало</a></li>
-                                <li><a data-i18n="navbar.rooms" href="<?php echo home_url('/Rooms'); ?>">Хотел</a></li>
-                                <li><a data-i18n="navbar.villa" href="<?php echo home_url('/Villa'); ?>">Къща</a></li>
-                                <li><a data-i18n="navbar.restaurant" href="<?php echo home_url('/Restaurant'); ?>">Ресторант</a></li>
-                                <li><a data-i18n="navbar.halls" href="<?php echo home_url('/Halls'); ?>">Конферентни зали</a></li>
-                                <li><a data-i18n="navbar.about" href="<?php echo home_url('/About'); ?>">За нас</a></li>
-                                <li><a data-i18n="navbar.contact" href="<?php echo home_url('/Contact'); ?>">Контакти</a></li>
+                                <li><a data-i18n="navbar.rooms" href="<?php echo home_url('/rooms'); ?>">Хотел</a></li>
+                                <li><a data-i18n="navbar.villa" href="<?php echo home_url('/villa'); ?>">Къща</a></li>
+                                <li><a data-i18n="navbar.restaurant" href="<?php echo home_url('/restaurant'); ?>">Ресторант</a></li>
+                                <li><a data-i18n="navbar.halls" href="<?php echo home_url('/halls'); ?>">Конферентни зали</a></li>
+                                <li><a data-i18n="navbar.about" href="<?php echo home_url('/about'); ?>">За нас</a></li>
+                                <li><a data-i18n="navbar.contact" href="<?php echo home_url('/contact'); ?>">Контакти</a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,12 +74,12 @@
                         <h4 class="widget-title" data-i18n="footer.roomsTitle">Стаи</h4>
                         <div class="widget-content">
                             <ul class="user-links">
-                                <li><a href="<?php echo home_url('/Rooms#ECONOMIC'); ?>"   data-i18n="navbar.room.economic">Икономична</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#DOUBLE'); ?>"     data-i18n="navbar.room.double">Двойна</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#SUPERIOR'); ?>"   data-i18n="navbar.room.superior">Супериорна</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#BOUTIQUE'); ?>"   data-i18n="navbar.room.boutique">Бутикова</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#APARTMENT1'); ?>" data-i18n="navbar.room.apartment1">Апартамент 1</a></li>
-                                <li><a href="<?php echo home_url('/Rooms#APARTMENT2'); ?>" data-i18n="navbar.room.apartment2">Апартамент 2</a></li>
+                                <li><a href="<?php echo home_url('/rooms#ECONOMIC'); ?>"   data-i18n="navbar.room.economic">Икономична</a></li>
+                                <li><a href="<?php echo home_url('/rooms#DOUBLE'); ?>"     data-i18n="navbar.room.double">Двойна</a></li>
+                                <li><a href="<?php echo home_url('/rooms#SUPERIOR'); ?>"   data-i18n="navbar.room.superior">Супериорна</a></li>
+                                <li><a href="<?php echo home_url('/rooms#BOUTIQUE'); ?>"   data-i18n="navbar.room.boutique">Бутикова</a></li>
+                                <li><a href="<?php echo home_url('/rooms#APARTMENT1'); ?>" data-i18n="navbar.room.apartment1">Апартамент 1</a></li>
+                                <li><a href="<?php echo home_url('/rooms#APARTMENT2'); ?>" data-i18n="navbar.room.apartment2">Апартамент 2</a></li>
                             </ul>
                         </div>
                     </div>
@@ -100,8 +100,8 @@
 
 
                             <ul class="user-links policy">
-                                <li><a href="<?php echo home_url('/Policy'); ?>"   data-i18n="footer.policy">Политика за сигурност</a></li>
-                                <li><a href="<?php echo home_url('/Terms'); ?>"   data-i18n="footer.terms">Общи условия</a></li>
+                                <li><a href="<?php echo home_url('/policy'); ?>"   data-i18n="footer.policy">Политика за сигурност</a></li>
+                                <li><a href="<?php echo home_url('/terms'); ?>"   data-i18n="footer.terms">Общи условия</a></li>
 
                             </ul>
                         </div>
