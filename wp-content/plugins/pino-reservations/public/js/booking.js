@@ -10,13 +10,13 @@
     'use strict';
 
     /* ── State ── */
-    var combos       = [];
-    var meals        = [];
-    var nights       = 0;
-    var selectedIdx  = -1;
-    var startDate    = '';
-    var endDate      = '';
-    var guests       = 0;
+    var combos = [];
+    var meals = [];
+    var nights = 0;
+    var selectedIdx = -1;
+    var startDate = '';
+    var endDate = '';
+    var guests = 0;
 
     /* ── DOM ready ── */
     $(function () {
@@ -36,8 +36,8 @@
             e.preventDefault();
 
             startDate = $form.find('[name="StartDate"]').val();
-            endDate   = $form.find('[name="EndDate"]').val();
-            guests    = parseInt($form.find('[name="Guests"]').val(), 10) || 1;
+            endDate = $form.find('[name="EndDate"]').val();
+            guests = parseInt($form.find('[name="Guests"]').val(), 10) || 1;
 
             if (!startDate || !endDate || startDate >= endDate) {
                 alert('Моля, посочете валидни дати.');
@@ -50,11 +50,11 @@
     }
 
     function checkAvailability() {
-        var $results  = $('#pino-results');
-        var $combos   = $('#pino-combos-list');
-        var $none     = $('#pino-no-combos');
-        var $bookSec  = $('#pino-book-section');
-        var $success  = $('#pino-success');
+        var $results = $('#pino-results');
+        var $combos = $('#pino-combos-list');
+        var $none = $('#pino-no-combos');
+        var $bookSec = $('#pino-book-section');
+        var $success = $('#pino-success');
 
         $bookSec.hide();
         $success.hide();
@@ -66,11 +66,11 @@
         $('html,body').animate({ scrollTop: $results.offset().top - 100 }, 500);
 
         $.post(PinoRes.ajaxurl, {
-            action:     'pino_check_availability',
-            nonce:      PinoRes.nonce,
+            action: 'pino_check_availability',
+            nonce: PinoRes.nonce,
             start_date: startDate,
-            end_date:   endDate,
-            guests:     guests
+            end_date: endDate,
+            guests: guests
         }, function (res) {
             if (!res.success) {
                 $combos.html('<p style="color:#c0392b;text-align:center;">' + (res.data && res.data.message ? res.data.message : 'Грешка.') + '</p>');
@@ -78,7 +78,7 @@
             }
 
             combos = res.data.combos;
-            meals  = res.data.meals;
+            meals = res.data.meals;
             nights = res.data.nights;
 
             $('#pino-results-summary').text(
@@ -126,7 +126,7 @@
             });
             html += '  </div>';
             html += '  <div class="pino-combo-card__footer">';
-            html += '    <span class="pino-combo-card__total">' + combo.total_price.toFixed(2) + ' лв. <small>/ ' + nights + (nights===1?' нощ':' нощи') + '</small></span>';
+            html += '    <span class="pino-combo-card__total">' + combo.total_price.toFixed(2) + ' лв. <small>/ ' + nights + (nights === 1 ? ' нощ' : ' нощи') + '</small></span>';
             html += '    <button type="button" class="theme-btn btn-style-one pino-select-combo" data-idx="' + combo.index + '">';
             html += '      <span class="btn-title" data-i18n="availability.select">Избери</span>';
             html += '    </button>';
@@ -161,7 +161,7 @@
         $('#pino-selected-summary').html(
             '<div class="pino-selected-info">' +
             '  <p><strong>' + typesStr.join(' + ') + '</strong></p>' +
-            '  <p>' + startDate + ' → ' + endDate + '  ·  ' + nights + (nights===1?' нощувка':' нощувки') + '  ·  ' + guests + (guests===1?' гост':' гости') + '</p>' +
+            '  <p>' + startDate + ' → ' + endDate + '  ·  ' + nights + (nights === 1 ? ' нощувка' : ' нощувки') + '  ·  ' + guests + (guests === 1 ? ' гост' : ' гости') + '</p>' +
             '  <p class="pino-room-price">Стаи: <strong>' + combo.total_price.toFixed(2) + ' лв.</strong></p>' +
             '</div>'
         );
@@ -213,7 +213,7 @@
 
         $('#pino-price-summary').html(
             '<div class="pino-price-box">' +
-            '  <div class="pino-price-row"><span>Стаи (' + nights + ' нощ' + (nights===1 ? '' : 'и') + ')</span><span>' + roomTotal.toFixed(2) + ' лв.</span></div>' +
+            '  <div class="pino-price-row"><span>Стаи (' + nights + ' нощ' + (nights === 1 ? '' : 'и') + ')</span><span>' + roomTotal.toFixed(2) + ' лв.</span></div>' +
             (mealTotal > 0 ? '  <div class="pino-price-row"><span>Хранене</span><span>' + mealTotal.toFixed(2) + ' лв.</span></div>' : '') +
             '  <div class="pino-price-row pino-price-total"><span>Обща цена</span><span>' + grand.toFixed(2) + ' лв.</span></div>' +
             '</div>'
@@ -225,11 +225,11 @@
        ═══════════════════════════════════════════ */
     function bindSubmit() {
         $(document).on('click', '#pino-submit-btn', function () {
-            var $btn   = $(this);
-            var fname  = $.trim($('#pino-fname').val());
-            var lname  = $.trim($('#pino-lname').val());
-            var email  = $.trim($('#pino-email').val());
-            var phone  = $.trim($('#pino-phone').val());
+            var $btn = $(this);
+            var fname = $.trim($('#pino-fname').val());
+            var lname = $.trim($('#pino-lname').val());
+            var email = $.trim($('#pino-email').val());
+            var phone = $.trim($('#pino-phone').val());
             var $error = $('#pino-booking-error');
 
             $error.hide();
@@ -247,15 +247,15 @@
             $btn.prop('disabled', true).find('.btn-title').text('Изпращане…');
 
             $.post(PinoRes.ajaxurl, {
-                action:      'pino_submit_booking',
-                nonce:       PinoRes.nonce,
-                first_name:  fname,
-                last_name:   lname,
-                email:       email,
-                phone:       phone,
-                start_date:  startDate,
-                end_date:    endDate,
-                guests:      guests,
+                action: 'pino_submit_booking',
+                nonce: PinoRes.nonce,
+                first_name: fname,
+                last_name: lname,
+                email: email,
+                phone: phone,
+                start_date: startDate,
+                end_date: endDate,
+                guests: guests,
                 combo_index: selectedIdx,
                 'meal_ids[]': mealIds
             }, function (res) {
@@ -289,8 +289,8 @@
 
             var $form = $('form[action*="RoomAvalability"], form[action*="roomavalability"]');
             startDate = $form.find('[name="StartDate"]').val();
-            endDate   = $form.find('[name="EndDate"]').val();
-            guests    = parseInt($form.find('[name="Guests"]').val(), 10) || 2;
+            endDate = $form.find('[name="EndDate"]').val();
+            guests = parseInt($form.find('[name="Guests"]').val(), 10) || 2;
 
             if (!startDate || !endDate || startDate >= endDate) {
                 // Scroll to form

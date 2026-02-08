@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Booking form template – rendered by [pino_booking] shortcode.
  * Styled to match the existing pinovilla theme (pino-reservation.css / availability.css).
  */
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (! defined('ABSPATH')) exit;
 ?>
 
 <!-- ═══════════ AVAILABILITY RESULTS ═══════════ -->
