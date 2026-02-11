@@ -5,8 +5,12 @@
     /* ----------  constants ---------- */
     const STORAGE_KEY  = "pino.lang";
     const DEFAULT_LANG = "bg";
-    let   current      = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
-    let   dict         = {};
+
+    /* Detect language from Polylang's HTML lang attribute (e.g. "en-US" → "en") */
+    const htmlLang = (document.documentElement.getAttribute("lang") || "").split("-")[0].toLowerCase();
+    let   current  = (htmlLang && ["bg","en","ro"].includes(htmlLang)) ? htmlLang
+                   : (localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG);
+    let   dict     = {};
 
     /* ----------  helpers ---------- */
     const qsa = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
@@ -14,9 +18,12 @@
 
     /* ----------  JSON loader ---------- */
     async function load(lang) {
-        if (lang === current && Object.keys(dict).length) return;
+        if (lang === current && Object.keys(dict).length > 0) return;
         try {
-            const res = await fetch(`/assets/Website/i18n/${lang}.json`, { cache: "no-store" });
+            const base = (typeof pinoI18n !== "undefined" && pinoI18n.basePath)
+                ? pinoI18n.basePath
+                : "/assets/Website/i18n";
+            const res = await fetch(`${base}/${lang}.json`, { cache: "no-store" });
             if (!res.ok) throw new Error(res.statusText);
             dict    = await res.json();
             current = lang;
@@ -113,9 +120,8 @@
         initMutationObserver();
         updateLangBadges();
 
-        // If saved language isn't BG, load its dictionary (will call translate on success)
-        if (current !== DEFAULT_LANG) load(current);
-        else translate(); // ensure BG also runs once
+        // Always load the dictionary for the current language
+        load(current);
     });
 
     /* ----------  expose ---------- */

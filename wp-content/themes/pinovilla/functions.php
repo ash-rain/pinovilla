@@ -31,6 +31,9 @@ function pinovilla_scripts()
     wp_enqueue_script('splittype', get_template_directory_uri() . '/assets/Website/js/splitType.js', array(), null, true);
     wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/Website/js/swiper.min.js', array(), null, true);
     wp_enqueue_script('translate', get_template_directory_uri() . '/assets/Website/js/translate.js', array(), null, true);
+    wp_localize_script('translate', 'pinoI18n', array(
+        'basePath' => get_template_directory_uri() . '/assets/Website/i18n',
+    ));
     wp_enqueue_script('wow', get_template_directory_uri() . '/assets/Website/js/wow.js', array(), null, true);
 
     // Main script
