@@ -101,7 +101,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
-                                <td data-label="Цена" class="availability-table__price">194 лв. <span>/ 99 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">99 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="economic">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
@@ -126,7 +126,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
-                                <td data-label="Цена" class="availability-table__price">207 лв. <span>/ 106 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">106 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="double">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
@@ -152,7 +152,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
-                                <td data-label="Цена" class="availability-table__price">219 лв. <span>/ 112 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">112 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="superior">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
@@ -178,7 +178,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-2</td>
-                                <td data-label="Цена" class="availability-table__price">238 лв. <span>/ 122 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">122 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="boutique">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
@@ -204,7 +204,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-4</td>
-                                <td data-label="Цена" class="availability-table__price">257 лв. <span>/ 131 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">131 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="apartment1">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
@@ -230,7 +230,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-4</td>
-                                <td data-label="Цена" class="availability-table__price">257 лв. <span>/ 131 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">131 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="apartment2">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>
@@ -259,7 +259,7 @@ get_header();
                                     </ul>
                                 </td>
                                 <td data-label="Гости"><i class="fal fa-circle-user me-1"></i> 1-6*</td>
-                                <td data-label="Цена" class="availability-table__price">700 лв. <span>/ 358 €</span></td>
+                                <td data-label="Цена" class="availability-table__price">358 €</td>
                                 <td data-label="" class="availability-table__action">
                                     <a href="#pino-booking" class="theme-btn btn-style-one availability-table__book-btn pino-book-btn" data-room="villa">
                                         <span class="btn-title" data-i18n="availability.book">Резервирай</span>

@@ -593,7 +593,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    19.90 &#x43B;&#x432;. / 10.17 &#x20AC;
+                                    10.17 €
                                 </span>
                                 </h6>
 
@@ -630,7 +630,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    27.90 &#x43B;&#x432;. / 14.27 &#x20AC;
+                                    14.27 €
                                 </span>
                                 </h6>
 
@@ -667,7 +667,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    25.90 &#x43B;&#x432;. / 13.24 &#x20AC;
+                                    13.24 €
                                 </span>
                                 </h6>
 
@@ -704,7 +704,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    17.90 &#x43B;&#x432;. / 9.15 &#x20AC;
+                                    9.15 €
                                 </span>
                                 </h6>
 
@@ -741,7 +741,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    32.00 &#x43B;&#x432;. / 16.36 &#x20AC;
+                                    16.36 €
                                 </span>
                                 </h6>
 
@@ -778,7 +778,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    29.90 &#x43B;&#x432;. / 15.29 &#x20AC;
+                                    15.29 €
                                 </span>
                                 </h6>
 
@@ -815,7 +815,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    29.90 &#x43B;&#x432;. / 15.29 &#x20AC;
+                                    15.29 €
                                 </span>
                                 </h6>
 
@@ -852,7 +852,7 @@
 
                                     <!-- price -->
                                     <span class="menu-price" style="flex-shrink:0;">
-                                    13.90 &#x43B;&#x432;. / 7.11 &#x20AC;
+                                    7.11 €
                                 </span>
                                 </h6>
 
