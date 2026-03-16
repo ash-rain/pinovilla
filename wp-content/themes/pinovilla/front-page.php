@@ -198,8 +198,7 @@
                                 <h4 class="title"><a href="<?php echo home_url('/rooms#ECONOMIC'); ?>" data-i18n="room.economic.name">Икономична
                                         стая</a></h4>
 
-                                <div class="price">194 BGN
-                                    / 99.19 €<span
+                                <div class="price">99.19 €<span
                                         data-i18n="currencyPerNight"> - вечер</span></div>
 
                             </div>
@@ -228,8 +227,7 @@
                                 <!-- room.double.name -->
                                 <h4 class="title"><a href="<?php echo home_url('/rooms#DOUBLE'); ?>" data-i18n="room.double.name">Двойна стая</a>
                                 </h4>
-                                <div class="price">207 BGN
-                                    / 105.84 €<span
+                                <div class="price">105.84 €<span
                                         data-i18n="currencyPerNight"> - вечер</span></div>
 
                             </div>
@@ -257,8 +255,7 @@
                                 <!-- room.superior.name -->
                                 <h4 class="title"><a href="<?php echo home_url('/rooms#SUPERIOR'); ?>" data-i18n="room.superior.name">Супериорна
                                         стая</a></h4>
-                                <div class="price">219 BGN
-                                    / 111.97 € <span
+                                <div class="price">111.97 € <span
                                         data-i18n="currencyPerNight">- вечер</span>
                                 </div>
                             </div>
@@ -287,8 +284,7 @@
                                 <h4 class="title"><a href="<?php echo home_url('/rooms#BOUTIQUE'); ?>" data-i18n="room.boutique.name">Бутикова
                                         стая</a>
                                 </h4>
-                                <div class="price">238 BGN
-                                    / 121.69 € <span
+                                <div class="price">121.69 € <span
                                         data-i18n="currencyPerNight">- вечер</span>
                                 </div>
                             </div>
@@ -317,8 +313,7 @@
                                 <h4 class="title"><a href="<?php echo home_url('/rooms#APARTMENT1'); ?>"
                                                      data-i18n="room.apartment.name">Апартамент</a>
                                 </h4>
-                                <div class="price">257 BGN
-                                    / 131.4 € <span
+                                <div class="price">131.4 € <span
                                         data-i18n="currencyPerNight">- вечер</span>
                                 </div>
 
@@ -347,8 +342,7 @@
                                 <!-- room.villa.name -->
                                 <h4 class="title"><a href="<?php echo home_url('/villa'); ?>" data-i18n="room.villa.name">Самостоятелна къща</a>
                                 </h4>
-                                <div class="price">700 BGN
-                                    / 357.9 € <span
+                                <div class="price">357.9 € <span
                                         data-i18n="currencyPerNight">- вечер</span>
                                 </div>
 

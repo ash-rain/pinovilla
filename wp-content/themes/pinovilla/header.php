@@ -10,9 +10,9 @@
 
 <body <?php body_class( !is_front_page() ? 'dark-layout' : '' ); ?>>
 <div b-21sjaj47gr class="page-wrapper">
-    
+
     <!-- Navbar -->
-    
+
 <header class="main-header <?php echo is_front_page() ? 'header-style-five' : 'header-style-four style-dark style-home5'; ?>">
         <div class="header-top">
             <div class="inner-box">
@@ -36,28 +36,8 @@
                            href="https://www.google.com/maps/place/Pino+-+Villa,+Casa,+Cucina+e+Terrazza/@43.3696602,28.0640392,17z"
                            data-i18n="navbar.location">Албена, България</a>
                     </span>
-                    <div style="display:flex; align-items: center; justify-content: center; margin-left: 30px">
-                        <?php
-                        if ( function_exists( 'pll_the_languages' ) ) {
-                            $langs = pll_the_languages( array( 'raw' => 1 ) );
-                            $first = true;
-                            foreach ( $langs as $lang ) {
-                                if ( ! $first ) {
-                                    echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">|</li>';
-                                }
-                                $first = false;
-                                echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">'
-                                    . '<a href="' . esc_url( $lang['url'] ) . '" style="font-size: 12px; color: white">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>'
-                                    . '</li>';
-                            }
-                        } else {
-                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white">BG</a></li>';
-                            echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">|</li>';
-                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white">EN</a></li>';
-                            echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center;">|</li>';
-                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white">RO</a></li>';
-                        }
-                        ?>
+                    <div class="lang-switch-container" style="display:flex; align-items: center; justify-content: center; margin-left: 30px">
+                        <?php echo pinovilla_lang_switcher(); ?>
                     </div>
                 </div>
             </div>
@@ -101,38 +81,13 @@
                         <li><a data-i18n="navbar.about" href="<?php echo home_url('/about'); ?>">За нас</a></li>
                         <li><a data-i18n="navbar.contact" href="<?php echo home_url('/contact'); ?>">Контакти</a></li>
 
-                        <!-- Language switch -->
-
-                        
-                            
-
                     </ul>
                 </nav>
             </div>
 
             <div class="outer-box">
                 <div class="lang-switch-container">
-                    <?php
-                    if ( function_exists( 'pll_the_languages' ) ) {
-                        $langs = pll_the_languages( array( 'raw' => 1 ) );
-                        $first = true;
-                        foreach ( $langs as $lang ) {
-                            if ( ! $first ) {
-                                echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">|</li>';
-                            }
-                            $first = false;
-                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">'
-                                . '<a href="' . esc_url( $lang['url'] ) . '" style="font-size: 12px; color:white;">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>'
-                                . '</li>';
-                        }
-                    } else {
-                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color:white;">BG</a></li>';
-                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">|</li>';
-                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color:white;">EN</a></li>';
-                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color:white;">|</li>';
-                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color:white;">RO</a></li>';
-                    }
-                    ?>
+                    <?php echo pinovilla_lang_switcher(); ?>
                 </div>
                 <div class="ui-btn-outer"></div>
                 <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
@@ -156,27 +111,7 @@
                 <ul class="navigation clearfix"></ul>
 
                 <div class="lang-switch-container" style="margin-top: 36px; margin-bottom: 12px;">
-                    <?php
-                    if ( function_exists( 'pll_the_languages' ) ) {
-                        $langs = pll_the_languages( array( 'raw' => 1 ) );
-                        $first = true;
-                        foreach ( $langs as $lang ) {
-                            if ( ! $first ) {
-                                echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">|</li>';
-                            }
-                            $first = false;
-                            echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;">'
-                                . '<a href="' . esc_url( $lang['url'] ) . '" style="font-size: 12px; color: white;">' . esc_html( strtoupper( $lang['slug'] ) ) . '</a>'
-                                . '</li>';
-                        }
-                    } else {
-                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white;">BG</a></li>';
-                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">|</li>';
-                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white;">EN</a></li>';
-                        echo '<li style="padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center">|</li>';
-                        echo '<li style="padding-left: 12px; display: flex; justify-content: center; align-items: center;"><a href="' . esc_url( home_url( '/' ) ) . '" style="font-size: 12px; color: white;">RO</a></li>';
-                    }
-                    ?>
+                    <?php echo pinovilla_lang_switcher(); ?>
                 </div>
 
                 <ul class="contact-list-one">

@@ -80,3 +80,96 @@ function pinovilla_room_availability_template($template)
     return $template;
 }
 add_filter('template_include', 'pinovilla_room_availability_template');
+
+/**
+ * Render the BG | EN | RO language switcher.
+ * When Polylang is active, links point to translated page URLs.
+ * When Polylang is inactive, links trigger client-side JS translation.
+ * All links include data-lang for the JS translator cookie integration.
+ */
+function pinovilla_lang_switcher()
+{
+    $li_style = 'padding-left: 12px; display: flex; justify-content: center; align-items: center;';
+    $sep_style = 'padding-left: 12px; font-size: 12px; display: flex; justify-content: center; align-items: center; color: white;';
+    $a_style = 'font-size: 12px; color: white;';
+
+    $out = '';
+
+    if (function_exists('pll_the_languages')) {
+        $langs = pll_the_languages(array('raw' => 1));
+        $first = true;
+        foreach ($langs as $lang) {
+            if (!$first) {
+                $out .= '<li style="' . $sep_style . '">|</li>';
+            }
+            $first = false;
+            $slug = esc_attr($lang['slug']);
+            $url = esc_url($lang['url']);
+            $label = esc_html(strtoupper($lang['slug']));
+            $out .= '<li style="' . $li_style . '">'
+                . '<a href="' . $url . '" data-lang="' . $slug . '" style="' . $a_style . '">' . $label . '</a>'
+                . '</li>';
+        }
+    } else {
+        $fallback_langs = array(
+            'bg' => 'BG',
+            'en' => 'EN',
+            'ro' => 'RO',
+        );
+        $first = true;
+        foreach ($fallback_langs as $slug => $label) {
+            if (!$first) {
+                $out .= '<li style="' . $sep_style . '">|</li>';
+            }
+            $first = false;
+            $out .= '<li style="' . $li_style . '">'
+                . '<a href="#" class="lang-switch" data-lang="' . esc_attr($slug) . '" style="' . $a_style . '">' . esc_html($label) . '</a>'
+                . '</li>';
+        }
+    }
+
+    return $out;
+}
+
+/**
+ * Server-side language redirect based on cookie.
+ * When a visitor has a pll_language cookie and Polylang is active,
+ * redirect them to the correct language version of the current page.
+ */
+function pinovilla_language_cookie_redirect()
+{
+    if (is_admin() || wp_doing_ajax() || wp_doing_cron()) {
+        return;
+    }
+
+    if (!function_exists('pll_current_language') || !function_exists('pll_get_post')) {
+        return;
+    }
+
+    $cookie_lang = isset($_COOKIE['pll_language']) ? sanitize_text_field($_COOKIE['pll_language']) : '';
+    if (!$cookie_lang || !in_array($cookie_lang, array('bg', 'en', 'ro'), true)) {
+        return;
+    }
+
+    $current_lang = pll_current_language('slug');
+    if ($current_lang === $cookie_lang) {
+        return;
+    }
+
+    $current_post_id = get_queried_object_id();
+    if (!$current_post_id) {
+        return;
+    }
+
+    $translated_id = pll_get_post($current_post_id, $cookie_lang);
+    if (!$translated_id || $translated_id === $current_post_id) {
+        return;
+    }
+
+    $translated_url = get_permalink($translated_id);
+    if ($translated_url) {
+        wp_safe_redirect($translated_url, 302);
+        exit;
+    }
+}
+add_action('template_redirect', 'pinovilla_language_cookie_redirect');

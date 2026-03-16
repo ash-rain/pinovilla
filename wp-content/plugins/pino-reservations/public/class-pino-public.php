@@ -211,7 +211,7 @@ class Pino_Public
         $body .= "Период: {$data['start_date']} → {$data['end_date']}\n";
         $body .= "Гости: {$data['guests']}\n";
         $body .= "Стаи: " . implode(', ', $types_str) . "\n";
-        $body .= "Обща цена: {$data['price']} лв.\n";
+        $body .= "Обща цена: {$data['price']} €\n";
 
         wp_mail($to, $subject, $body);
     }

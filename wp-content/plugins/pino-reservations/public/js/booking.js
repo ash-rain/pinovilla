@@ -121,12 +121,12 @@
                 html += '    <div class="pino-combo-card__type">';
                 html += '      <strong>' + t.name_bg + '</strong>';
                 if (t.count > 1) html += ' <span class="pino-combo-card__badge">× ' + t.count + '</span>';
-                html += '      <span class="pino-combo-card__type-price">' + t.price.toFixed(0) + ' лв./нощ</span>';
+                html += '      <span class="pino-combo-card__type-price">' + t.price.toFixed(0) + ' €/нощ</span>';
                 html += '    </div>';
             });
             html += '  </div>';
             html += '  <div class="pino-combo-card__footer">';
-            html += '    <span class="pino-combo-card__total">' + combo.total_price.toFixed(2) + ' лв. <small>/ ' + nights + (nights === 1 ? ' нощ' : ' нощи') + '</small></span>';
+            html += '    <span class="pino-combo-card__total">' + combo.total_price.toFixed(2) + ' € <small>/ ' + nights + (nights === 1 ? ' нощ' : ' нощи') + '</small></span>';
             html += '    <button type="button" class="theme-btn btn-style-one pino-select-combo" data-idx="' + combo.index + '">';
             html += '      <span class="btn-title" data-i18n="availability.select">Избери</span>';
             html += '    </button>';
@@ -162,7 +162,7 @@
             '<div class="pino-selected-info">' +
             '  <p><strong>' + typesStr.join(' + ') + '</strong></p>' +
             '  <p>' + startDate + ' → ' + endDate + '  ·  ' + nights + (nights === 1 ? ' нощувка' : ' нощувки') + '  ·  ' + guests + (guests === 1 ? ' гост' : ' гости') + '</p>' +
-            '  <p class="pino-room-price">Стаи: <strong>' + combo.total_price.toFixed(2) + ' лв.</strong></p>' +
+            '  <p class="pino-room-price">Стаи: <strong>' + combo.total_price.toFixed(2) + ' €</strong></p>' +
             '</div>'
         );
 
@@ -175,7 +175,7 @@
                     '  <input type="checkbox" name="pino_meal" value="' + m.id + '">' +
                     '  <span class="radio-box"></span>' +
                     '  <span>' + m.name_bg + '</span>' +
-                    '  <span class="price" style="margin-left:8px;">' + parseFloat(m.price).toFixed(0) + ' лв./чов./нощ</span>' +
+                    '  <span class="price" style="margin-left:8px;">' + parseFloat(m.price).toFixed(0) + ' €/чов./нощ</span>' +
                     '</label>'
                 );
             });
@@ -213,9 +213,9 @@
 
         $('#pino-price-summary').html(
             '<div class="pino-price-box">' +
-            '  <div class="pino-price-row"><span>Стаи (' + nights + ' нощ' + (nights === 1 ? '' : 'и') + ')</span><span>' + roomTotal.toFixed(2) + ' лв.</span></div>' +
-            (mealTotal > 0 ? '  <div class="pino-price-row"><span>Хранене</span><span>' + mealTotal.toFixed(2) + ' лв.</span></div>' : '') +
-            '  <div class="pino-price-row pino-price-total"><span>Обща цена</span><span>' + grand.toFixed(2) + ' лв.</span></div>' +
+            '  <div class="pino-price-row"><span>Стаи (' + nights + ' нощ' + (nights === 1 ? '' : 'и') + ')</span><span>' + roomTotal.toFixed(2) + ' €</span></div>' +
+            (mealTotal > 0 ? '  <div class="pino-price-row"><span>Хранене</span><span>' + mealTotal.toFixed(2) + ' €</span></div>' : '') +
+            '  <div class="pino-price-row pino-price-total"><span>Обща цена</span><span>' + grand.toFixed(2) + ' €</span></div>' +
             '</div>'
         );
     }
@@ -270,7 +270,7 @@
                 $('#pino-results, #pino-book-section').hide();
                 var $suc = $('#pino-success');
                 $suc.show();
-                $('#pino-success-id').text('Резервация #' + res.data.reservation_id + '  ·  ' + res.data.total_price + ' лв.');
+                $('#pino-success-id').text('Резервация #' + res.data.reservation_id + '  ·  ' + res.data.total_price + ' €');
                 $('html,body').animate({ scrollTop: $suc.offset().top - 100 }, 500);
             }).fail(function () {
                 $btn.prop('disabled', false).find('.btn-title').text('Изпрати резервация');

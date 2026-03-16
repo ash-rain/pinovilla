@@ -181,7 +181,7 @@ class Pino_Admin
                         <th>Email / Телефон</th>
                         <th>Период</th>
                         <th>Гости</th>
-                        <th>Цена (лв.)</th>
+                        <th>Цена (€)</th>
                         <th>Статус</th>
                         <th>Действия</th>
                     </tr>
@@ -235,7 +235,7 @@ class Pino_Admin
                     <h3>Престой</h3>
                     <p><strong>Период:</strong> <?php echo esc_html($res['start_date'] . ' → ' . $res['end_date']); ?></p>
                     <p><strong>Гости:</strong> <?php echo $res['guests']; ?></p>
-                    <p><strong>Обща цена:</strong> <?php echo number_format($res['price'], 2); ?> лв.</p>
+                    <p><strong>Обща цена:</strong> <?php echo number_format($res['price'], 2); ?> €</p>
                     <p><strong>Статус:</strong> <?php echo $status_labels[$res['status']] ?? $res['status']; ?></p>
                     <p><strong>Дата на създаване:</strong> <?php echo esc_html($res['created_at']); ?></p>
                 </div>
@@ -341,7 +341,7 @@ class Pino_Admin
                                 <td><input type="number" name="capacity" min="1" value="<?php echo $editing['capacity'] ?? 2; ?>"></td>
                             </tr>
                             <tr>
-                                <th>Цена / нощ (лв.)</th>
+                                <th>Цена / нощ (€)</th>
                                 <td><input type="number" name="price" step="0.01" min="0" value="<?php echo $editing['price'] ?? 0; ?>"></td>
                             </tr>
                             <tr>
@@ -538,7 +538,7 @@ class Pino_Admin
                                 <td><textarea name="desc_ro" rows="2" class="large-text"><?php echo esc_textarea($editing['desc_ro'] ?? ''); ?></textarea></td>
                             </tr>
                             <tr>
-                                <th>Цена (лв./ден/човек)</th>
+                                <th>Цена (€/ден/човек)</th>
                                 <td><input type="number" name="price" step="0.01" min="0" value="<?php echo $editing['price'] ?? 0; ?>"></td>
                             </tr>
                             <tr>
@@ -567,7 +567,7 @@ class Pino_Admin
                                 <tr>
                                     <td><?php echo $m['id']; ?></td>
                                     <td><?php echo esc_html($m['name_bg']); ?> <?php if (! $m['visible']) echo '<em>(скрито)</em>'; ?></td>
-                                    <td><?php echo number_format($m['price'], 2); ?> лв.</td>
+                                    <td><?php echo number_format($m['price'], 2); ?> €</td>
                                     <td>
                                         <a href="?page=pino-meals&edit=<?php echo $m['id']; ?>" class="button button-small">Редакция</a>
                                         <form method="post" style="display:inline;" onsubmit="return confirm('Изтриване?');">
