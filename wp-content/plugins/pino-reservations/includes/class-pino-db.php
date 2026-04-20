@@ -252,6 +252,40 @@ class Pino_DB
         ));
     }
 
+    /* ════════════════════════════════════════════
+       RESTAURANT MENU ITEMS
+       ════════════════════════════════════════════ */
+    public static function get_menu_items($visible_only = false)
+    {
+        global $wpdb;
+        $where = $visible_only ? 'WHERE visible = 1' : '';
+        return $wpdb->get_results("SELECT * FROM " . self::t('menu_items') . " $where ORDER BY sort_order ASC, id ASC", ARRAY_A);
+    }
+
+    public static function get_menu_item($id)
+    {
+        global $wpdb;
+        return $wpdb->get_row($wpdb->prepare("SELECT * FROM " . self::t('menu_items') . " WHERE id = %d", $id), ARRAY_A);
+    }
+
+    public static function save_menu_item($data, $id = null)
+    {
+        global $wpdb;
+        $table = self::t('menu_items');
+        if ($id) {
+            $wpdb->update($table, $data, ['id' => $id]);
+            return $id;
+        }
+        $wpdb->insert($table, $data);
+        return $wpdb->insert_id;
+    }
+
+    public static function delete_menu_item($id)
+    {
+        global $wpdb;
+        $wpdb->delete(self::t('menu_items'), ['id' => $id]);
+    }
+
     /* ── Stats for admin dashboard ── */
     public static function count_reservations($status = null)
     {

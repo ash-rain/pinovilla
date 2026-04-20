@@ -15,11 +15,11 @@
                             </div>
 
                             <div class="text mb-0" data-i18n="footer.noticeKids">
-                                В Pino Villa, Casa, Cucina е Terrazza не се допускат деца под 10 години!
+                                <?php pino_content_or('footer', 'notice_kids', 'В Pino Villa, Casa, Cucina е Terrazza не се допускат деца под 10 години!'); ?>
                             </div>
 
                             <div class="text mb-0" style="margin-top:32px" data-i18n="footer.newsletterPrompt">
-                                Абонирайте се за нашия newsletter, за да получавате всички наши оферти и промоции.
+                                <?php pino_content_or('footer', 'newsletter_prompt', 'Абонирайте се за нашия newsletter, за да получавате всички наши оферти и промоции.'); ?>
                             </div>
                         </div>
                     </div>
@@ -43,8 +43,18 @@
                         <h4 class="widget-title" data-i18n="footer.follow">Follow Us</h4>
                         <div class="widget-content">
                             <ul class="social-icon">
-                                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61558690053409"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a target="_blank" href="https://www.instagram.com/pinovillaecucina/"><i class="fa-brands fa-instagram"></i></a></li>
+                                <?php if ($fb = pino_setting('social.facebook')) : ?>
+                                    <li><a target="_blank" href="<?php echo esc_url($fb); ?>"><i class="fab fa-facebook-f"></i></a></li>
+                                <?php endif; ?>
+                                <?php if ($ig = pino_setting('social.instagram')) : ?>
+                                    <li><a target="_blank" href="<?php echo esc_url($ig); ?>"><i class="fa-brands fa-instagram"></i></a></li>
+                                <?php endif; ?>
+                                <?php if ($yt = pino_setting('social.youtube')) : ?>
+                                    <li><a target="_blank" href="<?php echo esc_url($yt); ?>"><i class="fa-brands fa-youtube"></i></a></li>
+                                <?php endif; ?>
+                                <?php if ($tt = pino_setting('social.tiktok')) : ?>
+                                    <li><a target="_blank" href="<?php echo esc_url($tt); ?>"><i class="fa-brands fa-tiktok"></i></a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
@@ -91,11 +101,11 @@
                         <h4 class="widget-title" data-i18n="footer.contactTitle">Контакти</h4>
                         <div class="widget-content">
                             <ul class="user-links">
-                                <li><a href="tel:+359885185008">+359 88 51 85 008</a></li>
-                                <li><a href="mailto:info@pinovilla.com">info@pinovilla.com</a></li>
+                                <li><a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', pino_setting('contact.phone', '+359885185008'))); ?>"><?php echo esc_html(pino_setting('contact.phone_display', '+359 88 51 85 008')); ?></a></li>
+                                <li><a href="mailto:<?php echo esc_attr(pino_setting('contact.email', 'info@pinovilla.com')); ?>"><?php echo esc_html(pino_setting('contact.email', 'info@pinovilla.com')); ?></a></li>
                                 <li><a target="_blank"
-                                       href="https://www.google.com/maps/place/Pino+-+Villa,+Casa,+Cucina+e+Terrazza/@43.3696602,28.0640392,17z"
-                                       data-i18n="navbar.location">Албена, България</a></li>
+                                       href="<?php echo esc_url(pino_setting('contact.map_url', 'https://www.google.com/maps/place/Pino+-+Villa,+Casa,+Cucina+e+Terrazza/@43.3696602,28.0640392,17z')); ?>"
+                                       data-i18n="navbar.location"><?php echo esc_html(pino_setting('contact.address_bg', 'Албена, България')); ?></a></li>
                             </ul>
 
 

@@ -18,23 +18,31 @@
             <div class="inner-box">
                 <div class="top-left">
                     <ul class="social-icon-one">
-                        <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61558690053409"><i
-                                    class="fab fa-facebook-f"></i></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/pinovillaecucina/"><i
-                                    class="fa-brands fa-instagram"></i></a></li>
+                        <?php $fb = pino_setting('social.facebook'); if ($fb) : ?>
+                            <li><a target="_blank" href="<?php echo esc_url($fb); ?>"><i class="fab fa-facebook-f"></i></a></li>
+                        <?php endif; ?>
+                        <?php $ig = pino_setting('social.instagram'); if ($ig) : ?>
+                            <li><a target="_blank" href="<?php echo esc_url($ig); ?>"><i class="fa-brands fa-instagram"></i></a></li>
+                        <?php endif; ?>
+                        <?php $yt = pino_setting('social.youtube'); if ($yt) : ?>
+                            <li><a target="_blank" href="<?php echo esc_url($yt); ?>"><i class="fa-brands fa-youtube"></i></a></li>
+                        <?php endif; ?>
+                        <?php $tt = pino_setting('social.tiktok'); if ($tt) : ?>
+                            <li><a target="_blank" href="<?php echo esc_url($tt); ?>"><i class="fa-brands fa-tiktok"></i></a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
 
                 <div class="top-right">
                     <span>
                         <i class="icon fa-solid fa-envelope"></i>
-                        <a class="navbar-link" href="mailto:info@pinovilla.com">info@pinovilla.com</a>
+                        <a class="navbar-link" href="mailto:<?php echo esc_attr(pino_setting('contact.email', 'info@pinovilla.com')); ?>"><?php echo esc_html(pino_setting('contact.email', 'info@pinovilla.com')); ?></a>
                     </span>
                     <span>
                         <i class="icon fa-sharp fa-solid fa-location-dot"></i>
                         <a class="navbar-link" target="_blank"
-                           href="https://www.google.com/maps/place/Pino+-+Villa,+Casa,+Cucina+e+Terrazza/@43.3696602,28.0640392,17z"
-                           data-i18n="navbar.location">Албена, България</a>
+                           href="<?php echo esc_url(pino_setting('contact.map_url', 'https://www.google.com/maps/place/Pino+-+Villa,+Casa,+Cucina+e+Terrazza/@43.3696602,28.0640392,17z')); ?>"
+                           data-i18n="navbar.location"><?php echo esc_html(pino_setting('contact.address_bg', 'Албена, България')); ?></a>
                     </span>
                     <div class="lang-switch-container" style="display:flex; align-items: center; justify-content: center; margin-left: 30px">
                         <?php echo pinovilla_lang_switcher(); ?>
@@ -120,37 +128,45 @@
                         <div class="contact-info-box">
                             <i class="icon lnr-icon-phone-handset"></i>
                             <span class="title" data-i18n="navbar.callUs">Обадете ни се</span>
-                            <a href="tel:+359885185008">+359 885 185 008</a>
+                            <a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', pino_setting('contact.phone', '+359885185008'))); ?>"><?php echo esc_html(pino_setting('contact.phone_display', '+359 885 185 008')); ?></a>
                         </div>
                     </li>
                     <li>
                         <div class="contact-info-box">
                             <span class="icon lnr-icon-envelope1"></span>
                             <span class="title" data-i18n="navbar.writeUs">Пишете ни</span>
-                            <a href="mailto:info@pinovilla.com">info@pinovilla.com</a>
+                            <a href="mailto:<?php echo esc_attr(pino_setting('contact.email', 'info@pinovilla.com')); ?>"><?php echo esc_html(pino_setting('contact.email', 'info@pinovilla.com')); ?></a>
                         </div>
                     </li>
                     <li>
                         <div class="contact-info-box">
                             <span class="icon lnr-icon-clock"></span>
                             <span class="title" data-i18n="navbar.hours">Работно време</span>
-                            <span data-i18n="navbar.openHours">Всеки ден 10:00 - 24:00</span>
+                            <span data-i18n="navbar.openHours"><?php echo esc_html(pino_setting('hours.general_bg', 'Всеки ден 10:00 - 24:00')); ?></span>
                         </div>
                     </li>
                     <li>
                         <div class="contact-info-box">
                             <span class="icon lnr-icon-clock"></span>
                             <span class="title" data-i18n="navbar.hours.restaurant">Работно време ресторант</span>
-                            <span data-i18n="navbar.openHours.restaurant">Всеки ден 11:30 - 22:00</span>
+                            <span data-i18n="navbar.openHours.restaurant"><?php echo esc_html(pino_setting('hours.restaurant_bg', 'Всеки ден 11:30 - 22:00')); ?></span>
                         </div>
                     </li>
                 </ul>
 
                 <ul class="social-links">
-                    <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61558690053409"><i
-                                class="fab fa-facebook-f"></i></a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/pinovillaecucina/"><i
-                                class="fa-brands fa-instagram"></i></a></li>
+                    <?php if ($fb = pino_setting('social.facebook')) : ?>
+                        <li><a target="_blank" href="<?php echo esc_url($fb); ?>"><i class="fab fa-facebook-f"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($ig = pino_setting('social.instagram')) : ?>
+                        <li><a target="_blank" href="<?php echo esc_url($ig); ?>"><i class="fa-brands fa-instagram"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($yt = pino_setting('social.youtube')) : ?>
+                        <li><a target="_blank" href="<?php echo esc_url($yt); ?>"><i class="fa-brands fa-youtube"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($tt = pino_setting('social.tiktok')) : ?>
+                        <li><a target="_blank" href="<?php echo esc_url($tt); ?>"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>

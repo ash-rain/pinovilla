@@ -6,7 +6,12 @@
     <div class="banner-slider banner-slider-home1">
         <div class="banner-slide">
             <div class="outer-box">
-                <img class="image-1 tm-gsap-img-parallax overflow-hidden index-hero" src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/hero.jpg" alt="">
+                <?php
+                    $hero_image   = pino_content('hero', 'image');
+                    $hero_heading = pino_content('hero', 'heading');
+                    if (! $hero_image) $hero_image = get_template_directory_uri() . '/assets/Website/images/PINO/images/hero.jpg';
+                ?>
+                <img class="image-1 tm-gsap-img-parallax overflow-hidden index-hero" src="<?php echo esc_url($hero_image); ?>" alt="">
                 <div class="content-box">
                     <div class="star-rating" data-animation-in="fadeInUp" data-wow-delay="300ms">
                         <i class="fa-sharp fa-solid fa-star-sharp"></i>
@@ -15,8 +20,7 @@
                         <i class="fa-sharp fa-solid fa-star-sharp"></i>
                         <i class="fa-sharp fa-solid fa-star-sharp"></i>
                     </div>
-                    <h1 data-i18n="banner.heading" data-animation-in="fadeInUp" data-delay-in="0.3">Pino - Villa, Casa,
-                        Cucina е Terrazza</h1>
+                    <h1 data-i18n="banner.heading" data-animation-in="fadeInUp" data-delay-in="0.3"><?php echo $hero_heading !== '' ? esc_html($hero_heading) : 'Pino - Villa, Casa, Cucina е Terrazza'; ?></h1>
                 </div>
             </div>
         </div>
@@ -578,302 +582,42 @@
             </div>
 
             <div class="row gx-xl-5 wow slideInUp">
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x421;&#x430;&#x43B;&#x430;&#x442;&#x430; &#x201E;&#x411;&#x443;&#x440;&#x430;&#x442;&#x430; &#x441; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;&#x201C;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x421;&#x430;&#x43B;&#x430;&#x442;&#x430; &#x201E;&#x411;&#x443;&#x440;&#x430;&#x442;&#x430; &#x441; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;&#x201C;
+                <?php foreach (Pino_DB::get_menu_items(true) as $pino_mi) :
+                    $mi_desc_bg = $pino_mi['desc_bg'] ?? '';
+                    $mi_desc_en = $pino_mi['desc_en'] ?? '';
+                    $mi_desc_ro = $pino_mi['desc_ro'] ?? '';
+                ?>
+                <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <h6 class="title">
+                                <span data-t-bg="<?php echo esc_attr($pino_mi['name_bg']); ?>"
+                                      data-t-en="<?php echo esc_attr($pino_mi['name_en'] ?? ''); ?>"
+                                      data-t-ro="<?php echo esc_attr($pino_mi['name_ro'] ?? ''); ?>">
+                                    <?php echo esc_html($pino_mi['name_bg']); ?>
                                 </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    10.17 €
+                                <span class="menu-price" style="flex-shrink:0;">
+                                    <?php echo number_format((float) $pino_mi['price'], 2); ?> €
                                 </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x438;&#x437;&#x43A;&#x443;&#x441;&#x438;&#x442;&#x435;&#x43B;&#x43D;&#x430; &#x43A;&#x43E;&#x43C;&#x431;&#x438;&#x43D;&#x430;&#x446;&#x438;&#x44F; &#x43E;&#x442; &#x441;&#x438;&#x440;&#x435;&#x43D;&#x435; &#x201E;&#x411;&#x443;&#x440;&#x430;&#x442;&#x430;&#x201C;, &#x43E;&#x431;&#x43E;&#x433;&#x430;&#x442;&#x435;&#x43D;&#x43E; &#x441; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#xD;&#xA;&#x43D;&#x430; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x43E; &#x441; &#x440;&#x443;&#x43A;&#x43E;&#x43B;&#x430;, &#x437;&#x435;&#x43B;&#x435;&#x43D; &#x43B;&#x443;&#x43A;, &#x431;&#x435;&#x43B;&#x435;&#x43D;&#x438; &#x438;/&#x438;&#x43B;&#x438; &#x447;&#x435;&#x440;&#x438; &#x434;&#x43E;&#x43C;&#x430;&#x442;&#x438;,&#xD;&#xA;&#x441;&#x444;&#x435;&#x440;&#x438; &#x43E;&#x442; &#x431;&#x430;&#x43B;&#x441;&#x430;&#x43C;&#x43E;&#x432; &#x43E;&#x446;&#x435;&#x442; &#x438; &#x43B;&#x438;&#x43E;&#x444;&#x438;&#x43B;&#x438;&#x437;&#x438;&#x440;&#x430;&#x43D;&#x438; &#x434;&#x43E;&#x43C;&#x430;&#x442;&#x438; &#x438; &#x43F;&#x440;&#x430;&#x445; &#x43E;&#x442; &#x43C;&#x430;&#x441;&#x43B;&#x438;&#x43D;&#x438;,&#xD;&#xA;&#x43F;&#x440;&#x438;&#x431;&#x430;&#x432;&#x44F;&#x449; &#x434;&#x44A;&#x43B;&#x431;&#x43E;&#x447;&#x438;&#x43D;&#x430; &#x43D;&#x430; &#x432;&#x43A;&#x443;&#x441;&#x430;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x438;&#x437;&#x43A;&#x443;&#x441;&#x438;&#x442;&#x435;&#x43B;&#x43D;&#x430; &#x43A;&#x43E;&#x43C;&#x431;&#x438;&#x43D;&#x430;&#x446;&#x438;&#x44F; &#x43E;&#x442; &#x441;&#x438;&#x440;&#x435;&#x43D;&#x435; &#x201E;&#x411;&#x443;&#x440;&#x430;&#x442;&#x430;&#x201C;, &#x43E;&#x431;&#x43E;&#x433;&#x430;&#x442;&#x435;&#x43D;&#x43E; &#x441; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#xD;&#xA;&#x43D;&#x430; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x43E; &#x441; &#x440;&#x443;&#x43A;&#x43E;&#x43B;&#x430;, &#x437;&#x435;&#x43B;&#x435;&#x43D; &#x43B;&#x443;&#x43A;, &#x431;&#x435;&#x43B;&#x435;&#x43D;&#x438; &#x438;/&#x438;&#x43B;&#x438; &#x447;&#x435;&#x440;&#x438; &#x434;&#x43E;&#x43C;&#x430;&#x442;&#x438;,&#xD;&#xA;&#x441;&#x444;&#x435;&#x440;&#x438; &#x43E;&#x442; &#x431;&#x430;&#x43B;&#x441;&#x430;&#x43C;&#x43E;&#x432; &#x43E;&#x446;&#x435;&#x442; &#x438; &#x43B;&#x438;&#x43E;&#x444;&#x438;&#x43B;&#x438;&#x437;&#x438;&#x440;&#x430;&#x43D;&#x438; &#x434;&#x43E;&#x43C;&#x430;&#x442;&#x438; &#x438; &#x43F;&#x440;&#x430;&#x445; &#x43E;&#x442; &#x43C;&#x430;&#x441;&#x43B;&#x438;&#x43D;&#x438;,&#xD;&#xA;&#x43F;&#x440;&#x438;&#x431;&#x430;&#x432;&#x44F;&#x449; &#x434;&#x44A;&#x43B;&#x431;&#x43E;&#x447;&#x438;&#x43D;&#x430; &#x43D;&#x430; &#x432;&#x43A;&#x443;&#x441;&#x430;/
+                            </h6>
+                            <?php if ($mi_desc_bg) : ?>
+                            <span class="designation"
+                                  data-t-bg="<?php echo esc_attr($mi_desc_bg); ?>"
+                                  data-t-en="<?php echo esc_attr($mi_desc_en); ?>"
+                                  data-t-ro="<?php echo esc_attr($mi_desc_ro); ?>">
+                                <?php echo esc_html($mi_desc_bg); ?>
                             </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x421;&#x422;&#x410;&#x420;&#x422;&#x415;&#x420;&#x418;"
-                                  data-t-en="STARTERS"
-                                  data-t-ro="STARTERS">
-                              &#x421;&#x422;&#x410;&#x420;&#x422;&#x415;&#x420;&#x418;
-                        </span>
+                            <?php endif; ?>
                         </div>
-                    </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x413;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431; &#x441;&#x44A;&#x441; &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x430; &#x44F;&#x431;&#x44A;&#x43B;&#x43A;&#x430;, &#x444;&#x43B;&#x430;&#x43C;&#x431;&#x438;&#x440;&#x430;&#x43D;&#x438; &#x441; &#x43A;&#x43E;&#x43D;&#x44F;&#x43A; &#x201E;&#x41A;&#x430;&#x43B;&#x432;&#x430;&#x434;&#x43E;&#x441;&#x201C;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x413;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431; &#x441;&#x44A;&#x441; &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x430; &#x44F;&#x431;&#x44A;&#x43B;&#x43A;&#x430;, &#x444;&#x43B;&#x430;&#x43C;&#x431;&#x438;&#x440;&#x430;&#x43D;&#x438; &#x441; &#x43A;&#x43E;&#x43D;&#x44F;&#x43A; &#x201E;&#x41A;&#x430;&#x43B;&#x432;&#x430;&#x434;&#x43E;&#x441;&#x201C;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    14.27 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x43D;&#x435;&#x436;&#x435;&#x43D; &#x438; &#x434;&#x435;&#x43B;&#x438;&#x43A;&#x430;&#x442;&#x435;&#x43D; &#x433;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431;, &#x441;&#x44A;&#x447;&#x435;&#x442;&#x430;&#x43D; &#x441;&#x44A;&#x441; &#x441;&#x432;&#x435;&#x436;&#x435;&#x441;&#x442;&#x442;&#x430; &#x43D;&#x430; &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x430;&#xD;&#xA;&#x44F;&#x431;&#x44A;&#x43B;&#x43A;&#x430; &#x438; &#x444;&#x43B;&#x430;&#x43C;&#x431;&#x438;&#x440;&#x430;&#x43D; &#x441; &#x438;&#x437;&#x438;&#x441;&#x43A;&#x430;&#x43D; &#x201E;&#x41A;&#x430;&#x43B;&#x432;&#x430;&#x434;&#x43E;&#x441;&#x201C;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x43D;&#x435;&#x436;&#x435;&#x43D; &#x438; &#x434;&#x435;&#x43B;&#x438;&#x43A;&#x430;&#x442;&#x435;&#x43D; &#x433;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431;, &#x441;&#x44A;&#x447;&#x435;&#x442;&#x430;&#x43D; &#x441;&#x44A;&#x441; &#x441;&#x432;&#x435;&#x436;&#x435;&#x441;&#x442;&#x442;&#x430; &#x43D;&#x430; &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x430;&#xD;&#xA;&#x44F;&#x431;&#x44A;&#x43B;&#x43A;&#x430; &#x438; &#x444;&#x43B;&#x430;&#x43C;&#x431;&#x438;&#x440;&#x430;&#x43D; &#x441; &#x438;&#x437;&#x438;&#x441;&#x43A;&#x430;&#x43D; &#x201E;&#x41A;&#x430;&#x43B;&#x432;&#x430;&#x434;&#x43E;&#x441;&#x201C;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x422;&#x41E;&#x41F;&#x41B;&#x418; &#x41F;&#x420;&#x415;&#x414;&#x42F;&#x421;&#x422;&#x418;&#x42F;"
-                                  data-t-en="WARM STARTERS"
-                                  data-t-ro="WARM STARTERS">
-                              &#x422;&#x41E;&#x41F;&#x41B;&#x418; &#x41F;&#x420;&#x415;&#x414;&#x42F;&#x421;&#x422;&#x418;&#x42F;
+                        <span class="food-pack"
+                              data-t-bg="<?php echo esc_attr($pino_mi['category_bg'] ?? ''); ?>"
+                              data-t-en="<?php echo esc_attr($pino_mi['category_en'] ?? ''); ?>"
+                              data-t-ro="<?php echo esc_attr($pino_mi['category_ro'] ?? ''); ?>">
+                            <?php echo esc_html($pino_mi['category_bg'] ?? ''); ?>
                         </span>
-                        </div>
                     </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x413;&#x44C;&#x43E;&#x437;&#x438; &#x441;&#x44A;&#x441; &#x441;&#x432;&#x438;&#x43D;&#x441;&#x43A;&#x43E; &#x43C;&#x435;&#x441;&#x43E;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x438; &#x441; &#x433;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431; &#x438; &#x441;&#x43E;&#x441; &#x441; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;&#x438;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x413;&#x44C;&#x43E;&#x437;&#x438; &#x441;&#x44A;&#x441; &#x441;&#x432;&#x438;&#x43D;&#x441;&#x43A;&#x43E; &#x43C;&#x435;&#x441;&#x43E;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x438; &#x441; &#x433;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431; &#x438; &#x441;&#x43E;&#x441; &#x441; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;&#x438;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    13.24 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x442;&#x440;&#x430;&#x434;&#x438;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x438; &#x433;&#x44C;&#x43E;&#x437;&#x438;, &#x43F;&#x44A;&#x43B;&#x43D;&#x435;&#x43D;&#x438; &#x441;&#x44A;&#x441; &#x441;&#x432;&#x438;&#x43D;&#x441;&#x43A;&#x43E; &#x43C;&#x435;&#x441;&#x43E;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x438; &#x432;&#xD;&#xA;&#x441;&#x44A;&#x432;&#x44A;&#x440;&#x448;&#x435;&#x43D;&#x441;&#x442;&#x432;&#x43E; &#x441; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#x430; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x443;&#x440;&#x430; &#x438; &#x43E;&#x431;&#x43E;&#x433;&#x430;&#x442;&#x435;&#x43D;&#x438; &#x441;&#x44A;&#x441; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x43D;&#x438;&#x44F; &#x432;&#x43A;&#x443;&#x441;&#xD;&#xA;&#x43D;&#x430; &#x433;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431;, &#x441;&#x444;&#x435;&#x440;&#x438; &#x43E;&#x442; &#x441;&#x43E;&#x435;&#x432; &#x441;&#x43E;&#x441; &#x438; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x435;&#x43D; &#x441;&#x43E;&#x441; &#x441; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;&#x438;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x442;&#x440;&#x430;&#x434;&#x438;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x438; &#x433;&#x44C;&#x43E;&#x437;&#x438;, &#x43F;&#x44A;&#x43B;&#x43D;&#x435;&#x43D;&#x438; &#x441;&#x44A;&#x441; &#x441;&#x432;&#x438;&#x43D;&#x441;&#x43A;&#x43E; &#x43C;&#x435;&#x441;&#x43E;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x438; &#x432;&#xD;&#xA;&#x441;&#x44A;&#x432;&#x44A;&#x440;&#x448;&#x435;&#x43D;&#x441;&#x442;&#x432;&#x43E; &#x441; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#x430; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x443;&#x440;&#x430; &#x438; &#x43E;&#x431;&#x43E;&#x433;&#x430;&#x442;&#x435;&#x43D;&#x438; &#x441;&#x44A;&#x441; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x43D;&#x438;&#x44F; &#x432;&#x43A;&#x443;&#x441;&#xD;&#xA;&#x43D;&#x430; &#x433;&#x44A;&#x448;&#x438; &#x434;&#x440;&#x43E;&#x431;, &#x441;&#x444;&#x435;&#x440;&#x438; &#x43E;&#x442; &#x441;&#x43E;&#x435;&#x432; &#x441;&#x43E;&#x441; &#x438; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x435;&#x43D; &#x441;&#x43E;&#x441; &#x441; &#x442;&#x440;&#x44E;&#x444;&#x435;&#x43B;&#x438;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x422;&#x41E;&#x41F;&#x41B;&#x418; &#x41F;&#x420;&#x415;&#x414;&#x42F;&#x421;&#x422;&#x418;&#x42F;"
-                                  data-t-en="WARM STARTERS"
-                                  data-t-ro="WARM STARTERS">
-                              &#x422;&#x41E;&#x41F;&#x41B;&#x418; &#x41F;&#x420;&#x415;&#x414;&#x42F;&#x421;&#x422;&#x418;&#x42F;
-                        </span>
-                        </div>
-                    </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x422;&#x430;&#x43B;&#x438;&#x430;&#x442;&#x435;&#x43B;&#x438; &#x201E;&#x41F;&#x430;&#x440;&#x43C;&#x438;&#x434;&#x436;&#x430;&#x43D;&#x430;&#x201C;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x422;&#x430;&#x43B;&#x438;&#x430;&#x442;&#x435;&#x43B;&#x438; &#x201E;&#x41F;&#x430;&#x440;&#x43C;&#x438;&#x434;&#x436;&#x430;&#x43D;&#x430;&#x201C;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    9.15 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x43F;&#x440;&#x438;&#x433;&#x43E;&#x442;&#x432;&#x435;&#x43D;&#x438; &#x432; &#x43F;&#x430;&#x440;&#x43C;&#x435;&#x437;&#x430;&#x43D;&#x43E;&#x432;&#x430; &#x43F;&#x438;&#x442;&#x430;, &#x433;&#x430;&#x440;&#x43D;&#x438;&#x440;&#x430;&#x43D;&#x438; &#x441; &#x433;&#x443;&#x430;&#x43D;&#x447;&#x430;&#x43B;&#x435; &#x438; &#x43F;&#x438;&#x43F;&#x435;&#x440;&#xD;&#xA;&#x43C;&#x435;&#x43B;&#x430;&#x43D;&#x436;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x43F;&#x440;&#x438;&#x433;&#x43E;&#x442;&#x432;&#x435;&#x43D;&#x438; &#x432; &#x43F;&#x430;&#x440;&#x43C;&#x435;&#x437;&#x430;&#x43D;&#x43E;&#x432;&#x430; &#x43F;&#x438;&#x442;&#x430;, &#x433;&#x430;&#x440;&#x43D;&#x438;&#x440;&#x430;&#x43D;&#x438; &#x441; &#x433;&#x443;&#x430;&#x43D;&#x447;&#x430;&#x43B;&#x435; &#x438; &#x43F;&#x438;&#x43F;&#x435;&#x440;&#xD;&#xA;&#x43C;&#x435;&#x43B;&#x430;&#x43D;&#x436;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x41F;&#x410;&#x421;&#x422;&#x410;"
-                                  data-t-en="PASTA"
-                                  data-t-ro="PASTA">
-                              &#x41F;&#x410;&#x421;&#x422;&#x410;
-                        </span>
-                        </div>
-                    </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x412;&#x438;&#x435;&#x43D;&#x441;&#x43A;&#x438; &#x448;&#x43D;&#x438;&#x446;&#x435;&#x43B; &#x441; &#x431;&#x438;&#x43B;&#x43A;&#x43E;&#x432;&#x43E; &#x43C;&#x430;&#x441;&#x43B;&#x43E; &#x438; &#x447;&#x438;&#x43F;&#x441;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x412;&#x438;&#x435;&#x43D;&#x441;&#x43A;&#x438; &#x448;&#x43D;&#x438;&#x446;&#x435;&#x43B; &#x441; &#x431;&#x438;&#x43B;&#x43A;&#x43E;&#x432;&#x43E; &#x43C;&#x430;&#x441;&#x43B;&#x43E; &#x438; &#x447;&#x438;&#x43F;&#x441;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    16.36 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x43A;&#x43B;&#x430;&#x441;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x432;&#x438;&#x435;&#x43D;&#x441;&#x43A;&#x438; &#x448;&#x43D;&#x438;&#x446;&#x435;&#x43B; &#x43E;&#x442; &#x43D;&#x430;&#x447;&#x443;&#x43A;&#x430;&#x43D;&#x43E; &#x442;&#x435;&#x43B;&#x435;&#x448;&#x43A;&#x43E; &#x43C;&#x435;&#x441;&#x43E; &#x441; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#x430;&#xD;&#xA;&#x437;&#x43B;&#x430;&#x442;&#x438;&#x441;&#x442;&#x430; &#x43A;&#x43E;&#x440;&#x438;&#x447;&#x43A;&#x430;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D; &#x441; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E; &#x431;&#x438;&#x43B;&#x43A;&#x43E;&#x432;&#x43E; &#x43C;&#x430;&#x441;&#x43B;&#x43E;, &#x43F;&#x440;&#x438;&#x434;&#x430;&#x432;&#x430;&#x449;&#x43E;&#xD;&#xA;&#x441;&#x432;&#x435;&#x436;&#x438; &#x438; &#x438;&#x437;&#x438;&#x441;&#x43A;&#x430;&#x43D;&#x438; &#x43D;&#x43E;&#x442;&#x43A;&#x438;, &#x438; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432; &#x447;&#x438;&#x43F;&#x441;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x43A;&#x43B;&#x430;&#x441;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x432;&#x438;&#x435;&#x43D;&#x441;&#x43A;&#x438; &#x448;&#x43D;&#x438;&#x446;&#x435;&#x43B; &#x43E;&#x442; &#x43D;&#x430;&#x447;&#x443;&#x43A;&#x430;&#x43D;&#x43E; &#x442;&#x435;&#x43B;&#x435;&#x448;&#x43A;&#x43E; &#x43C;&#x435;&#x441;&#x43E; &#x441; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#x430;&#xD;&#xA;&#x437;&#x43B;&#x430;&#x442;&#x438;&#x441;&#x442;&#x430; &#x43A;&#x43E;&#x440;&#x438;&#x447;&#x43A;&#x430;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D; &#x441; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E; &#x431;&#x438;&#x43B;&#x43A;&#x43E;&#x432;&#x43E; &#x43C;&#x430;&#x441;&#x43B;&#x43E;, &#x43F;&#x440;&#x438;&#x434;&#x430;&#x432;&#x430;&#x449;&#x43E;&#xD;&#xA;&#x441;&#x432;&#x435;&#x436;&#x438; &#x438; &#x438;&#x437;&#x438;&#x441;&#x43A;&#x430;&#x43D;&#x438; &#x43D;&#x43E;&#x442;&#x43A;&#x438;, &#x438; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432; &#x447;&#x438;&#x43F;&#x441;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x41E;&#x421;&#x41D;&#x41E;&#x412;&#x41D;&#x418;"
-                                  data-t-en="MAIN DISHES"
-                                  data-t-ro="MAIN DISHES">
-                              &#x41E;&#x421;&#x41D;&#x41E;&#x412;&#x41D;&#x418;
-                        </span>
-                        </div>
-                    </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x424;&#x438;&#x43B;&#x435; &#x43E;&#x442; &#x43B;&#x430;&#x432;&#x440;&#x430;&#x43A; &#x441; &#x43B;&#x438;&#x43C;&#x43E;&#x43D;&#x43E;&#x432;&#x43E; &#x440;&#x438;&#x437;&#x43E;&#x442;&#x43E; &#x438; &#x43F;&#x430;&#x440;&#x43C;&#x435;&#x437;&#x430;&#x43D;&#x43E;&#x432; &#x447;&#x438;&#x43F;&#x441;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x424;&#x438;&#x43B;&#x435; &#x43E;&#x442; &#x43B;&#x430;&#x432;&#x440;&#x430;&#x43A; &#x441; &#x43B;&#x438;&#x43C;&#x43E;&#x43D;&#x43E;&#x432;&#x43E; &#x440;&#x438;&#x437;&#x43E;&#x442;&#x43E; &#x438; &#x43F;&#x430;&#x440;&#x43C;&#x435;&#x437;&#x430;&#x43D;&#x43E;&#x432; &#x447;&#x438;&#x43F;&#x441;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    15.29 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x444;&#x438;&#x43B;&#x435; &#x43E;&#x442; &#x43B;&#x430;&#x432;&#x440;&#x430;&#x43A;, &#x441;&#x44A;&#x447;&#x435;&#x442;&#x430;&#x43D;&#x43E; &#x441; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E; &#x43B;&#x438;&#x43C;&#x43E;&#x43D;&#x43E;&#x432;&#x43E; &#x440;&#x438;&#x437;&#x43E;&#x442;&#x43E;, &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#xD;&#xA;&#x43F;&#x430;&#x440;&#x43C;&#x435;&#x437;&#x430;&#x43D;&#x43E;&#x432; &#x447;&#x438;&#x43F;&#x441;, &#x43B;&#x438;&#x43C;&#x43E;&#x43D;&#x43E;&#x432;&#x438; &#x441;&#x444;&#x435;&#x440;&#x438; &#x438; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E; &#x431;&#x438;&#x43B;&#x43A;&#x43E;&#x432;&#x43E; &#x43E;&#x43B;&#x438;&#x43E;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x444;&#x438;&#x43B;&#x435; &#x43E;&#x442; &#x43B;&#x430;&#x432;&#x440;&#x430;&#x43A;, &#x441;&#x44A;&#x447;&#x435;&#x442;&#x430;&#x43D;&#x43E; &#x441; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E; &#x43B;&#x438;&#x43C;&#x43E;&#x43D;&#x43E;&#x432;&#x43E; &#x440;&#x438;&#x437;&#x43E;&#x442;&#x43E;, &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#xD;&#xA;&#x43F;&#x430;&#x440;&#x43C;&#x435;&#x437;&#x430;&#x43D;&#x43E;&#x432; &#x447;&#x438;&#x43F;&#x441;, &#x43B;&#x438;&#x43C;&#x43E;&#x43D;&#x43E;&#x432;&#x438; &#x441;&#x444;&#x435;&#x440;&#x438; &#x438; &#x430;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E; &#x431;&#x438;&#x43B;&#x43A;&#x43E;&#x432;&#x43E; &#x43E;&#x43B;&#x438;&#x43E;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x41E;&#x421;&#x41D;&#x41E;&#x412;&#x41D;&#x418;"
-                                  data-t-en="MAIN DISHES"
-                                  data-t-ro="MAIN DISHES">
-                              &#x41E;&#x421;&#x41D;&#x41E;&#x412;&#x41D;&#x418;
-                        </span>
-                        </div>
-                    </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x41F;&#x430;&#x442;&#x435;&#x448;&#x43A;&#x43E; &#x43C;&#x430;&#x433;&#x440;&#x435; &#x441; &#x43F;&#x44E;&#x440;&#x435; &#x43E;&#x442; &#x43A;&#x430;&#x440;&#x444;&#x438;&#x43E;&#x43B; &#x438; &#x43F;&#x43E;&#x440;&#x442;&#x43E;&#x43A;&#x430;&#x43B;&#x43E;&#x432; &#x433;&#x430;&#x441;&#x442;&#x440;&#x438;&#x43A;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x41F;&#x430;&#x442;&#x435;&#x448;&#x43A;&#x43E; &#x43C;&#x430;&#x433;&#x440;&#x435; &#x441; &#x43F;&#x44E;&#x440;&#x435; &#x43E;&#x442; &#x43A;&#x430;&#x440;&#x444;&#x438;&#x43E;&#x43B; &#x438; &#x43F;&#x43E;&#x440;&#x442;&#x43E;&#x43A;&#x430;&#x43B;&#x43E;&#x432; &#x433;&#x430;&#x441;&#x442;&#x440;&#x438;&#x43A;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    15.29 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x43D;&#x435;&#x436;&#x43D;&#x43E; &#x43F;&#x430;&#x442;&#x435;&#x448;&#x43A;&#x43E; &#x43C;&#x430;&#x433;&#x440;&#x435; &#x441; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#x430; &#x43A;&#x43E;&#x436;&#x438;&#x447;&#x43A;&#x430;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x43E; &#x432;&#x44A;&#x440;&#x445;&#x443; &#x444;&#x438;&#x43D;&#x43E;&#xD;&#xA;&#x43F;&#x44E;&#x440;&#x435; &#x441; &#x43A;&#x430;&#x440;&#x444;&#x438;&#x43E;&#x43B; &#x438; &#x434;&#x43E;&#x43F;&#x44A;&#x43B;&#x43D;&#x435;&#x43D;&#x43E; &#x43E;&#x442; &#x43F;&#x43E;&#x440;&#x442;&#x43E;&#x43A;&#x430;&#x43B;&#x43E;&#x432;&#x438;&#x44F; &#x433;&#x430;&#x441;&#x442;&#x440;&#x438;&#x43A;, &#x43E;&#x441;&#x438;&#x433;&#x443;&#x440;&#x44F;&#x432;&#x430;&#x449;&#xD;&#xA;&#x43B;&#x435;&#x43A;&#x43E; &#x43A;&#x438;&#x441;&#x435;&#x43B;&#x430; &#x438; &#x441;&#x43B;&#x430;&#x434;&#x43A;&#x430; &#x43D;&#x43E;&#x442;&#x43A;&#x430;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x43D;&#x435;&#x436;&#x43D;&#x43E; &#x43F;&#x430;&#x442;&#x435;&#x448;&#x43A;&#x43E; &#x43C;&#x430;&#x433;&#x440;&#x435; &#x441; &#x445;&#x440;&#x443;&#x43F;&#x43A;&#x430;&#x432;&#x430; &#x43A;&#x43E;&#x436;&#x438;&#x447;&#x43A;&#x430;, &#x43F;&#x43E;&#x434;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x43E; &#x432;&#x44A;&#x440;&#x445;&#x443; &#x444;&#x438;&#x43D;&#x43E;&#xD;&#xA;&#x43F;&#x44E;&#x440;&#x435; &#x441; &#x43A;&#x430;&#x440;&#x444;&#x438;&#x43E;&#x43B; &#x438; &#x434;&#x43E;&#x43F;&#x44A;&#x43B;&#x43D;&#x435;&#x43D;&#x43E; &#x43E;&#x442; &#x43F;&#x43E;&#x440;&#x442;&#x43E;&#x43A;&#x430;&#x43B;&#x43E;&#x432;&#x438;&#x44F; &#x433;&#x430;&#x441;&#x442;&#x440;&#x438;&#x43A;, &#x43E;&#x441;&#x438;&#x433;&#x443;&#x440;&#x44F;&#x432;&#x430;&#x449;&#xD;&#xA;&#x43B;&#x435;&#x43A;&#x43E; &#x43A;&#x438;&#x441;&#x435;&#x43B;&#x430; &#x438; &#x441;&#x43B;&#x430;&#x434;&#x43A;&#x430; &#x43D;&#x43E;&#x442;&#x43A;&#x430;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x41E;&#x421;&#x41D;&#x41E;&#x412;&#x41D;&#x418;"
-                                  data-t-en="MAIN DISHES"
-                                  data-t-ro="MAIN DISHES">
-                              &#x41E;&#x421;&#x41D;&#x41E;&#x412;&#x41D;&#x418;
-                        </span>
-                        </div>
-                    </div>
-                    <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-
-
-                            <div class="content-box">
-                                <h6 class="title">
-                                    <!-- menu name -->
-                                    <span data-t-bg="&#x417;&#x43B;&#x430;&#x442;&#x43D;&#x43E; &#x201E;&#x41C;&#x430;&#x442;&#x447;&#x430; &#x422;&#x438;&#x440;&#x430;&#x43C;&#x438;&#x441;&#x443;&#x201C;"
-                                          data-t-en=""
-                                          data-t-ro="">
-                                    &#x417;&#x43B;&#x430;&#x442;&#x43D;&#x43E; &#x201E;&#x41C;&#x430;&#x442;&#x447;&#x430; &#x422;&#x438;&#x440;&#x430;&#x43C;&#x438;&#x441;&#x443;&#x201C;
-                                </span>
-
-                                    <!-- price -->
-                                    <span class="menu-price" style="flex-shrink:0;">
-                                    7.11 €
-                                </span>
-                                </h6>
-
-                                <!-- description -->
-                                <span class="designation"
-                                      data-t-bg="/&#x442;&#x440;&#x430;&#x434;&#x438;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x438;&#x44F;&#x442; &#x438;&#x442;&#x430;&#x43B;&#x438;&#x430;&#x43D;&#x441;&#x43A;&#x438; &#x434;&#x435;&#x441;&#x435;&#x440;&#x442; &#x201E;&#x422;&#x438;&#x440;&#x430;&#x43C;&#x438;&#x441;&#x443;&#x201C;, &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x432;&#x430;&#x449;&#xD;&#xA;&#x432;&#x44A;&#x43B;&#x43D;&#x443;&#x432;&#x430;&#x449; &#x430;&#x437;&#x438;&#x430;&#x442;&#x441;&#x43A;&#x438; &#x43E;&#x431;&#x440;&#x430;&#x442; &#x441; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x44F;&#x43D;&#x435;&#x442;&#x43E; &#x43D;&#x430; &#x43C;&#x430;&#x442;&#x447;&#x430; &#x438; &#x44E;&#x437;&#x443;/"
-                                      data-t-en=""
-                                      data-t-ro="">
-                                /&#x442;&#x440;&#x430;&#x434;&#x438;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x438;&#x44F;&#x442; &#x438;&#x442;&#x430;&#x43B;&#x438;&#x430;&#x43D;&#x441;&#x43A;&#x438; &#x434;&#x435;&#x441;&#x435;&#x440;&#x442; &#x201E;&#x422;&#x438;&#x440;&#x430;&#x43C;&#x438;&#x441;&#x443;&#x201C;, &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x432;&#x430;&#x449;&#xD;&#xA;&#x432;&#x44A;&#x43B;&#x43D;&#x443;&#x432;&#x430;&#x449; &#x430;&#x437;&#x438;&#x430;&#x442;&#x441;&#x43A;&#x438; &#x43E;&#x431;&#x440;&#x430;&#x442; &#x441; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x44F;&#x43D;&#x435;&#x442;&#x43E; &#x43D;&#x430; &#x43C;&#x430;&#x442;&#x447;&#x430; &#x438; &#x44E;&#x437;&#x443;/
-                            </span>
-                            </div>
-
-                            <!-- category badge -->
-                            <span class="food-pack"
-                                  data-t-bg="&#x414;&#x415;&#x421;&#x415;&#x420;&#x422;&#x418;"
-                                  data-t-en="DESSERTS"
-                                  data-t-ro="DESSERTS">
-                              &#x414;&#x415;&#x421;&#x415;&#x420;&#x422;&#x418;
-                        </span>
-                        </div>
-                    </div>
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
