@@ -497,7 +497,7 @@
                                 <h1 class="title wow fadeInUp" data-wow-delay="600ms" data-i18n="villa.title1">Луксозно
                                     уединение <br> сред природата</h1>
                                 <div class="btn-box wow fadeInUp" data-wow-delay="900ms">
-                                    <a href="/HallAvailabilityPage" class="theme-btn btn-style-two"><span
+                                    <a href="<?php echo home_url('/contact'); ?>" class="theme-btn btn-style-two"><span
                                             class="btn-title"
                                             data-i18n="villa.book">Резервирай</span></a>
                                 </div>
@@ -571,57 +571,6 @@
     </section>
     <!-- End Banner Section -->
 
-
-
-    <!-- pricing-section -->
-    <section class="pricing-section">
-        <div class="auto-container">
-            <div class="sec-title text-center wow fadeInUp">
-                <span class="sub-title" data-i18n="pricing.subtitle">Ресторант</span>
-                <h2 data-i18n="pricing.title">Специални предложения</h2>
-            </div>
-
-            <div class="row gx-xl-5 wow slideInUp">
-                <?php foreach (Pino_DB::get_menu_items(true) as $pino_mi) :
-                    $mi_desc_bg = $pino_mi['desc_bg'] ?? '';
-                    $mi_desc_en = $pino_mi['desc_en'] ?? '';
-                    $mi_desc_ro = $pino_mi['desc_ro'] ?? '';
-                ?>
-                <div class="pricing-block-two col-lg-6 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <h6 class="title">
-                                <span data-t-bg="<?php echo esc_attr($pino_mi['name_bg']); ?>"
-                                      data-t-en="<?php echo esc_attr($pino_mi['name_en'] ?? ''); ?>"
-                                      data-t-ro="<?php echo esc_attr($pino_mi['name_ro'] ?? ''); ?>">
-                                    <?php echo esc_html($pino_mi['name_bg']); ?>
-                                </span>
-                                <span class="menu-price" style="flex-shrink:0;">
-                                    <?php echo number_format((float) $pino_mi['price'], 2); ?> €
-                                </span>
-                            </h6>
-                            <?php if ($mi_desc_bg) : ?>
-                            <span class="designation"
-                                  data-t-bg="<?php echo esc_attr($mi_desc_bg); ?>"
-                                  data-t-en="<?php echo esc_attr($mi_desc_en); ?>"
-                                  data-t-ro="<?php echo esc_attr($mi_desc_ro); ?>">
-                                <?php echo esc_html($mi_desc_bg); ?>
-                            </span>
-                            <?php endif; ?>
-                        </div>
-                        <span class="food-pack"
-                              data-t-bg="<?php echo esc_attr($pino_mi['category_bg'] ?? ''); ?>"
-                              data-t-en="<?php echo esc_attr($pino_mi['category_en'] ?? ''); ?>"
-                              data-t-ro="<?php echo esc_attr($pino_mi['category_ro'] ?? ''); ?>">
-                            <?php echo esc_html($pino_mi['category_bg'] ?? ''); ?>
-                        </span>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-    <!-- End pricing-section -->
 
     <!-- video-section -->
     <section class="video-section">

@@ -17,27 +17,10 @@
                             <div class="text mb-0" data-i18n="footer.noticeKids">
                                 <?php pino_content_or('footer', 'notice_kids', 'В Pino Villa, Casa, Cucina е Terrazza не се допускат деца под 10 години!'); ?>
                             </div>
-
-                            <div class="text mb-0" style="margin-top:32px" data-i18n="footer.newsletterPrompt">
-                                <?php pino_content_or('footer', 'newsletter_prompt', 'Абонирайте се за нашия newsletter, за да получавате всички наши оферти и промоции.'); ?>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="footer-widget news-widget">
-                        <div class="subscribe-form-three">
-                            <form method="post" action="#">
-                                <div class="form-group">
-                                    <input type="email" name="email" class="email"
-                                           placeholder="Имейл адрес"
-                                           data-i18n="footer.emailPlaceholder" required>
-                                    <button type="submit" class="theme-btn btn-style-one">
-                                        <span class="btn-title"><i class="fa fa-paper-plane"></i></span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <!-- newsletter hidden -->
 
                     <div class="footer-widget widget-social">
                         <h4 class="widget-title" data-i18n="footer.follow">Follow Us</h4>
