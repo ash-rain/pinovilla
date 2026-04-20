@@ -112,7 +112,7 @@
                 <div class="copyright-text" data-i18n="footer.rights">
                     All rights reserved&nbsp;| Support by
                 </div>
-                <a href="https://nsh.one" target="_blank" style="margin-left: 8px;">NetShell</a>
+                <a href="https://nsh.one" target="_blank" style="margin-left: 8px; color: #fff; text-decoration: underline;">NetShell</a>
             </div>
         </div>
     </div>
