@@ -110,11 +110,9 @@
         <div class="auto-container">
             <div class="inner-container">
                 <div class="copyright-text" data-i18n="footer.rights">
-                    All rights reserved&nbsp;| Created by
+                    All rights reserved&nbsp;| Support by
                 </div>
-                <a href="https://codemode.bg/" target="_blank" style="display: flex; margin-left: 8px;">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/Website/images/PINO/images/code_mode_logo.svg" alt="CodeMode" class="codemode-logo">
-                </a>
+                <a href="https://nsh.one" target="_blank" style="margin-left: 8px;">NetShell</a>
             </div>
         </div>
     </div>
